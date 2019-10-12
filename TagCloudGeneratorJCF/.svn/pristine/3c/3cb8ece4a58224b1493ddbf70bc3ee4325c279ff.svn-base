@@ -1,0 +1,73 @@
+ BufferedReader in = new BufferedReader(
+                new InputStreamReader(System.in));
+
+        // Get the input file's name and check for errors
+        System.out.println("Enter the name of the input text file: ");
+        String file = "";
+        try {
+            file = in.readLine();
+        } catch (IOException e) {
+            System.err.print("Error: cannot read input " + e);
+        }
+        String inFile = file;
+        BufferedReader input = null;
+        while (input == null) {
+            try {
+                input = new BufferedReader(new FileReader(file));
+            } catch (IOException e) {
+                System.out.println("File name invalid. Enter again")
+
+            }
+        }
+
+        // Get the output file's name and check for errors
+        System.out.print("Enter the name of the output file: ");
+        String outFile = "";
+        try {
+            outFile = in.readLine();
+        } catch (IOException e) {
+            System.err.println("Error: cannot read input " + e);
+        }
+        PrintWriter out = null;
+        while (out == null) {
+            try {
+                out = new PrintWriter(
+                        new BufferedWriter(new FileWriter(outFile)));
+            } catch (IOException e) {
+                System.err.println("Error: cannot open output file " + e);
+
+            }
+        }
+
+        // Get the number of words to output and check for errors
+
+        System.out.print("Enter number of words to be included in tag cloud: ");
+        int numWords = 0;
+        try {
+            numWords = Integer.parseInt(in.readLine());
+        } catch (NumberFormatException e) {
+            System.err.println("Error: number is in incorrect format");
+        } catch (IOException e) {
+            System.err.println("Error: cannot read input");
+        }
+        if (numWords < 0) {
+            numWords = 0;
+        }
+
+        //Output the header tags
+        outputHTMLHeader(out, inFile, numWords);
+
+        //Create a reader for the input file and output words
+        createTagCloud(out, input, numWords);
+
+        //Close streams
+
+        out.close();
+
+        try {
+            in.close();
+        } catch (IOException e) {
+            System.err.println("Error closing file");
+        }
+
+    }

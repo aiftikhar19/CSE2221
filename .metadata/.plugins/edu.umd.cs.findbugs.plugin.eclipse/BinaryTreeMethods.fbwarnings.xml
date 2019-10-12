@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="10" timestamp="1488920278283" analysisTimestamp="1488920277576" release="">
+  <Project projectName="BinaryTreeMethods">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\BinaryTreeMethods\bin\BinaryTreeMethods.class</Jar>
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\BinaryTreeMethods\bin\BinaryTreeMethodsTest.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\BinaryTreeMethods\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\BinaryTreeMethods\lib\binary-tree-utility.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\BinaryTreeMethods\src</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\BinaryTreeMethods\test</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 7 Mar 2017 15:57:57 -0500" total_classes="2" referenced_classes="21" total_bugs="0" total_size="170" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="2.14" clock_seconds="0.71" peak_mbytes="481.54" alloc_mbytes="1024.00" gc_seconds="0.01">
+    <PackageStats package="" total_bugs="0" total_types="2" total_size="170">
+      <ClassStats class="BinaryTreeMethods" sourceFile="BinaryTreeMethods.java" interface="false" size="58" bugs="0"/>
+      <ClassStats class="BinaryTreeMethodsTest" sourceFile="BinaryTreeMethodsTest.java" interface="false" size="112" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="283" invocations="339" avgMicrosecondsPerInvocation="836" maxMicrosecondsPerInvocation="24002" standardDeviationMircosecondsPerInvocation="2297"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="147" invocations="2" avgMicrosecondsPerInvocation="73746" maxMicrosecondsPerInvocation="136404" standardDeviationMircosecondsPerInvocation="62658"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="44" invocations="339" avgMicrosecondsPerInvocation="132" maxMicrosecondsPerInvocation="997" standardDeviationMircosecondsPerInvocation="82"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="20" invocations="21" avgMicrosecondsPerInvocation="968" maxMicrosecondsPerInvocation="5601" standardDeviationMircosecondsPerInvocation="1448"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="16" invocations="306" avgMicrosecondsPerInvocation="53" maxMicrosecondsPerInvocation="792" standardDeviationMircosecondsPerInvocation="88"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="15" invocations="77" avgMicrosecondsPerInvocation="206" maxMicrosecondsPerInvocation="1159" standardDeviationMircosecondsPerInvocation="232"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1486485581366" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1486485581368" release="" codeSize="51" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1486486043465" release="" codeSize="55" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1486486071296" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1486486106188" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1486486113081" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1486486117609" release="" codeSize="58" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1486486963715" release="" codeSize="54" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1488920088226" release="" codeSize="54" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1488920117838" release="" codeSize="112" numClasses="1"/>
+  </History>
+</BugCollection>

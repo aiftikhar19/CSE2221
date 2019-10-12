@@ -1,0 +1,641 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import components.naturalnumber.NaturalNumber;
+
+/**
+ * JUnit test fixture for {@code NaturalNumber}'s constructors and kernel
+ * methods.
+ *
+ * @author Aisha, Cerys
+ *
+ */
+public abstract class NaturalNumberTest {
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * implementation under test and returns the result.
+     *
+     * @return the new number
+     * @ensures constructorTest = 0
+     */
+    protected abstract NaturalNumber constructorTest();
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * implementation under test and returns the result.
+     *
+     * @param i
+     *            {@code int} to initialize from
+     * @return the new number
+     * @requires i >= 0
+     * @ensures constructorTest = i
+     */
+    protected abstract NaturalNumber constructorTest(int i);
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * implementation under test and returns the result.
+     *
+     * @param s
+     *            {@code String} to initialize from
+     * @return the new number
+     * @requires there exists n: NATURAL (s = TO_STRING(n))
+     * @ensures s = TO_STRING(constructorTest)
+     */
+    protected abstract NaturalNumber constructorTest(String s);
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * implementation under test and returns the result.
+     *
+     * @param n
+     *            {@code NaturalNumber} to initialize from
+     * @return the new number
+     * @ensures constructorTest = n
+     */
+    protected abstract NaturalNumber constructorTest(NaturalNumber n);
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * reference implementation and returns the result.
+     *
+     * @return the new number
+     * @ensures constructorRef = 0
+     */
+    protected abstract NaturalNumber constructorRef();
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * reference implementation and returns the result.
+     *
+     * @param i
+     *            {@code int} to initialize from
+     * @return the new number
+     * @requires i >= 0
+     * @ensures constructorRef = i
+     */
+    protected abstract NaturalNumber constructorRef(int i);
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * reference implementation and returns the result.
+     *
+     * @param s
+     *            {@code String} to initialize from
+     * @return the new number
+     * @requires there exists n: NATURAL (s = TO_STRING(n))
+     * @ensures s = TO_STRING(constructorRef)
+     */
+    protected abstract NaturalNumber constructorRef(String s);
+
+    /**
+     * Invokes the appropriate {@code NaturalNumber} constructor for the
+     * reference implementation and returns the result.
+     *
+     * @param n
+     *            {@code NaturalNumber} to initialize from
+     * @return the new number
+     * @ensures constructorRef = n
+     */
+    protected abstract NaturalNumber constructorRef(NaturalNumber n);
+
+    // TODO - add test cases for four constructors, multiplyBy10, divideBy10, isZero
+
+    @Test
+    public final void testDefaultConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber q = this.constructorTest();
+        NaturalNumber qExpected = this.constructorRef();
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void testZeroIntConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber q = this.constructorTest(0);
+        NaturalNumber qExpected = this.constructorRef(0);
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void testNonZeroIntConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber q = this.constructorTest(15);
+        NaturalNumber qExpected = this.constructorRef(15);
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void testZeroStringConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber q = this.constructorTest("0");
+        NaturalNumber qExpected = this.constructorRef();
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void testNonZeroStringConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber q = this.constructorTest("15");
+        NaturalNumber qExpected = this.constructorRef("15");
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void testZeroNNConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber zero = this.constructorRef(0);
+        NaturalNumber q = this.constructorTest(zero);
+        NaturalNumber qExpected = this.constructorRef();
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void testNonZeroNNConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber five = this.constructorRef(5);
+        NaturalNumber q = this.constructorTest(five);
+        NaturalNumber qExpected = this.constructorRef(5);
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+
+    @Test
+    public final void multiplyByTenZero() {
+        /*
+         * Set up variables and call method under test
+         */
+        NaturalNumber zero = this.constructorRef(0);
+        NaturalNumber q = this.constructorTest(zero);
+        NaturalNumber qExpected = this.constructorRef();
+        /*
+         * Assert that values of variables match expectations
+         */
+        assertEquals(qExpected, q);
+    }
+    /*
+     * default constructor: boundary case, only possible case
+     */
+    @Test
+    public final void defaultConstructor() {
+        NaturalNumber test = this.constructorTest();
+        NaturalNumber ref = this.constructorRef();
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, boundary case: smallest possible int
+     */
+    @Test
+    public final void intConstructor0() {
+        NaturalNumber test = this.constructorTest(0);
+        NaturalNumber ref = this.constructorRef(0);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, boundary case: largest possible int
+     */
+    @Test
+    public final void intConstructorIntMaxValue() {
+        NaturalNumber test = this.constructorTest(Integer.MAX_VALUE);
+        NaturalNumber ref = this.constructorRef(Integer.MAX_VALUE);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, routine case: even number
+     */
+    @Test
+    public final void intConstructorEveNaturalNumberumber() {
+        NaturalNumber test = this.constructorTest(22345678);
+        NaturalNumber ref = this.constructorRef(22345678);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, routine case: odd number
+     */
+    @Test
+    public final void intConstructorOddNumber() {
+        NaturalNumber test = this.constructorTest(22345677);
+        NaturalNumber ref = this.constructorRef(22345677);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, challenge case: 0 as a digit in a non-0 number
+     */
+    @Test
+    public final void intConstructorZeroDigits() {
+        NaturalNumber test = this.constructorTest(4020100);
+        NaturalNumber ref = this.constructorRef(4020100);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, routine case: single-digit number
+     */
+    @Test
+    public final void intConstructorSingleDigitEven() {
+        NaturalNumber test = this.constructorTest(4);
+        NaturalNumber ref = this.constructorRef(4);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * int constructor, routine case: single-digit number
+     */
+    @Test
+    public final void intConstructorSingleDigitOdd() {
+        NaturalNumber test = this.constructorTest(5);
+        NaturalNumber ref = this.constructorRef(5);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * String constructor, boundary case: smallest possible value
+     */
+    @Test
+    public final void stringConstructor0() {
+        NaturalNumber test = this.constructorTest("0");
+        NaturalNumber ref = this.constructorRef("0");
+        assertEquals(ref, test);
+    }
+
+    /*
+     * String constructor, challenge case: greater than Integer.MAX_VALUE
+     */
+    @Test
+    public final void stringConstructorIntMaxValue() {
+        NaturalNumber test = this
+                .constructorTest("" + Integer.MAX_VALUE + "28");
+        NaturalNumber ref = this.constructorRef("" + Integer.MAX_VALUE + "28");
+        assertEquals(ref, test);
+    }
+
+    /*
+     * String constructor, routine case: even number
+     */
+    @Test
+    public final void stringConstructorEveNaturalNumberumber() {
+        NaturalNumber test = this.constructorTest("25678652");
+        NaturalNumber ref = this.constructorRef("25678652");
+        assertEquals(ref, test);
+    }
+
+    /*
+     * String constructor, routine case: odd number
+     */
+    @Test
+    public final void stringConstructorOddNumber() {
+        NaturalNumber test = this.constructorTest("25678653");
+        NaturalNumber ref = this.constructorRef("25678653");
+        assertEquals(ref, test);
+    }
+
+    /*
+     * String constructor, routine case: single-digit number
+     */
+    @Test
+    public final void stringConstructorSingleDigit() {
+        NaturalNumber test = this.constructorTest("3");
+        NaturalNumber ref = this.constructorRef("3");
+        assertEquals(ref, test);
+    }
+
+    /*
+     * String constructor, challenge case: non-zero number containing 0s as
+     * digits
+     */
+    @Test
+    public final void stringConstructorZeroDigit() {
+        NaturalNumber test = this.constructorTest("304055600980");
+        NaturalNumber ref = this.constructorRef("304055600980");
+        assertEquals(ref, test);
+    }
+
+    /*
+     * NaturalNumber constructor, boundary case: 0 with ref as parameter
+     */
+    @Test
+    public final void naturalNumberConstructorZero() {
+        NaturalNumber sourceRef = this.constructorRef(0);
+        NaturalNumber sourcePreserve = this.constructorRef(0);
+        NaturalNumber test = this.constructorTest(sourceRef);
+        /*
+         * Check postconditions
+         */
+        assertEquals(sourceRef, test);
+        assertEquals(sourceRef, sourcePreserve);
+    }
+
+    /*
+     * NaturalNumber constructor, challenge case: greater than Integer.MAX_VALUE
+     */
+    @Test
+    public final void naturalNumberConstructorIntMaxValueTest() {
+        NaturalNumber sourceRef = this
+                .constructorRef(Integer.MAX_VALUE + "" + 5);
+        NaturalNumber sourcePreserve = this
+                .constructorRef(Integer.MAX_VALUE + "" + 5);
+        NaturalNumber test = this.constructorTest(sourceRef);
+
+        assertEquals(sourceRef, test);
+        assertEquals(sourceRef, sourcePreserve);
+    }
+
+    /*
+     * NaturalNumber constructor, challenge case: non-zero number with zeros as
+     * digits
+     */
+    @Test
+    public final void naturalNumberConstructorZeroDigits() {
+        NaturalNumber sourceRef = this.constructorRef(40050900);
+        NaturalNumber sourcePreserve = this.constructorRef(40050900);
+        NaturalNumber test = this.constructorTest(sourceRef);
+
+        assertEquals(sourceRef, test);
+        assertEquals(sourceRef, sourcePreserve);
+    }
+
+    /*
+     * NaturalNumber constructor, routine ccase: single digit even number
+     */
+    @Test
+    public final void naturalNumberConstructorEven() {
+        NaturalNumber sourceRef = this.constructorRef(4);
+        NaturalNumber sourcePreserve = this.constructorRef(4);
+        NaturalNumber test = this.constructorTest(sourceRef);
+
+        assertEquals(sourceRef, test);
+        assertEquals(sourceRef, sourcePreserve);
+    }
+
+    /*
+     * NaturalNumber constructor, routine case: single digit odd number
+     */
+    @Test
+    public final void naturalNumberConstructorOdd() {
+        NaturalNumber sourceRef = this.constructorRef(5);
+        NaturalNumber sourcePreserve = this.constructorRef(5);
+        NaturalNumber test = this.constructorTest(sourceRef);
+
+        assertEquals(sourceRef, test);
+        assertEquals(sourceRef, sourcePreserve);
+    }
+
+    /*
+     * Tests multiplyBy10, boundary case: this=0
+     */
+    @Test
+    public final void multiplyBy10ThisZero() {
+        NaturalNumber test = this.constructorTest(0);
+        NaturalNumber ref = this.constructorRef(0);
+        test.multiplyBy10(5);
+        ref.multiplyBy10(5);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests multiplyBy10, boundary case: largest possible value of k
+     */
+    @Test
+    public final void multiplyBy109() {
+        NaturalNumber test = this.constructorTest(2);
+        NaturalNumber ref = this.constructorRef(2);
+        test.multiplyBy10(9);
+        ref.multiplyBy10(9);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests multiplyBy10, boundary case: smallest possible value of k
+     */
+    @Test
+    public final void multiplyBy10KZero() {
+        NaturalNumber test = this.constructorTest(2);
+        NaturalNumber ref = this.constructorRef(2);
+        test.multiplyBy10(0);
+        ref.multiplyBy10(0);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests multiplyBy10, boundary case: smallest value of k and this
+     */
+    @Test
+    public final void multiplyBy10KThisZero() {
+        NaturalNumber test = this.constructorTest(0);
+        NaturalNumber ref = this.constructorRef(0);
+        test.multiplyBy10(0);
+        ref.multiplyBy10(0);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests multiplyBy10, routine case: single digit number
+     */
+    @Test
+    public final void multiplyBy10SingleDigit() {
+        NaturalNumber test = this.constructorTest(5);
+        NaturalNumber ref = this.constructorRef(5);
+        test.multiplyBy10(3);
+        ref.multiplyBy10(3);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests multiplyBy10, routine case: multi digit number
+     */
+    @Test
+    public final void multiplyBy10MultiDigit() {
+        NaturalNumber test = this.constructorTest(589076);
+        NaturalNumber ref = this.constructorRef(589076);
+        test.multiplyBy10(3);
+        ref.multiplyBy10(3);
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests divideBy10, boundary case: this=0
+     */
+    @Test
+    public final void divideBy10Zero() {
+        NaturalNumber test = this.constructorTest(0);
+        NaturalNumber ref = this.constructorRef(0);
+        int remainderTest = test.divideBy10();
+        int remainderRef = ref.divideBy10();
+        assertEquals(ref, test);
+        assertEquals(remainderTest, remainderRef);
+    }
+
+    /*
+     * Tests divideBy10, challenge case: this>Integer.MAX_VALUE
+     */
+    @Test
+    public final void divideBy10IntMaxValue() {
+        NaturalNumber test = this.constructorTest(Integer.MAX_VALUE + "" + 5);
+        NaturalNumber ref = this.constructorRef(Integer.MAX_VALUE + "" + 5);
+        int remainderTest = test.divideBy10();
+        int remainderRef = ref.divideBy10();
+        assertEquals(ref, test);
+        assertEquals(remainderTest, remainderRef);
+    }
+
+    /*
+     * Tests divideBy10, challenge case: non-zero number with zeros as digits
+     */
+    @Test
+    public final void divideBy10DigitZeros() {
+        NaturalNumber test = this.constructorTest(1005056710);
+        NaturalNumber ref = this.constructorRef(1005056710);
+        int remainderTest = test.divideBy10();
+        int remainderRef = ref.divideBy10();
+        assertEquals(ref, test);
+        assertEquals(remainderTest, remainderRef);
+    }
+
+    /*
+     * Tests divideBy10, routine case: single-digit number
+     */
+    @Test
+    public final void divideBy10SingleDigit() {
+        NaturalNumber test = this.constructorTest(7);
+        NaturalNumber ref = this.constructorRef(7);
+        /*
+         * Call method under test
+         */
+        int remainderTest = test.divideBy10();
+        int remainderRef = ref.divideBy10();
+        /*
+         * Check postconditions
+         */
+        assertEquals(ref, test);
+        assertEquals(remainderTest, remainderRef);
+    }
+
+    /*
+     * Tests isZero, boundary case: this=0
+     */
+    @Test
+    public final void isZeroWithZero() {
+        /*
+         * Set up variables
+         */
+        NaturalNumber test = this.constructorTest(0);
+        NaturalNumber ref = this.constructorRef(0);
+        assertEquals(ref, test);
+        /*
+         * Call method under test
+         */
+        boolean testIsZero = test.isZero();
+        /*
+         * Check postconditions
+         */
+        assertEquals(test, ref);
+        assertEquals(testIsZero, true);
+    }
+
+    /*
+     * Tests isZero, challenge case: non-zero number containing 0 as a digit
+     */
+    @Test
+    public final void isZeroDigitZero() {
+        /*
+         * Set up variables
+         */
+        NaturalNumber test = this.constructorTest(10908990);
+        NaturalNumber ref = this.constructorRef(10908990);
+        assertEquals(ref, test);
+        /*
+         * Call method under test
+         */
+        boolean testIsZero = test.isZero();
+        /*
+         * Check postconditions
+         */
+        assertEquals(test, ref);
+        assertEquals(testIsZero, false);
+    }
+
+    /*
+     * Tests isZero, challenge case: this>Integer.MAX_VALUE
+     */
+    @Test
+    public final void isZeroIntMaxValue() {
+        /*
+         * Set up variables
+         */
+        NaturalNumber test = this.constructorTest(Integer.MAX_VALUE + "" + 5);
+        NaturalNumber ref = this.constructorRef(Integer.MAX_VALUE + "" + 5);
+        assertEquals(ref, test);
+        /*
+         * Call method under test
+         */
+        boolean testIsZero = test.isZero();
+        /*
+         * Check postconditions
+         */
+        assertEquals(test, ref);
+        assertEquals(testIsZero, false);
+    }
+
+    /*
+     * Tests isZero, routine case: this has single digit
+     */
+    @Test
+    public final void isZeroSingleDigit() {
+        /*
+         * Set up variables
+         */
+        NaturalNumber test = this.constructorTest(3);
+        NaturalNumber ref = this.constructorRef(3);
+        assertEquals(ref, test);
+        /*
+         * Call method under test
+         */
+        boolean testIsZero = test.isZero();
+        /*
+         * Check postconditions
+         */
+        assertEquals(test, ref);
+        assertEquals(testIsZero, false);
+    }
+}

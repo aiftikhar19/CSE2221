@@ -1,0 +1,11 @@
+PROGRAM TestNoInstructions IS
+BEGIN
+  WHILE true DO
+    skip
+  END WHILE
+  skip
+  IF random THEN 
+    infect
+    infect
+    END IF
+END TestNoInstructions

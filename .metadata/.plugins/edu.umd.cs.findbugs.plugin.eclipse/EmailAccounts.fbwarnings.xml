@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="54" timestamp="1492704471148" analysisTimestamp="1492704470956" release="">
+  <Project projectName="EmailAccounts">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\EmailAccounts\bin\EmailAccountMain.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\EmailAccounts\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\EmailAccounts\src</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\EmailAccounts\test</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="NP_TOSTRING_COULD_RETURN_NULL" priority="2" rank="14" abbrev="NP" category="BAD_PRACTICE" first="3" last="5" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Method classname="EmailAccount1" name="toString" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" start="74" end="74" startBytecode="0" endBytecode="43" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Method>
+    <SourceLine classname="EmailAccount1" start="74" end="74" startBytecode="1" endBytecode="1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    <SourceLine classname="EmailAccount1" start="74" end="74" startBytecode="1" endBytecode="1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="3" last="4" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="address" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+    <SourceLine classname="EmailAccount1" start="40" end="40" startBytecode="87" endBytecode="87" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="3" last="3" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="firstName" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+    <SourceLine classname="EmailAccount1" start="35" end="35" startBytecode="6" endBytecode="6" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="3" last="3" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="lastName" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+    <SourceLine classname="EmailAccount1" start="36" end="36" startBytecode="11" endBytecode="11" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1" last="2" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="address" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" start="17" end="17" startBytecode="0" endBytecode="0" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1" last="2" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="firstName" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" start="15" end="15" startBytecode="0" endBytecode="0" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1" last="2" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="lastName" signature="Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="EmailAccount1" start="16" end="16" startBytecode="0" endBytecode="0" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="UUF_UNUSED_FIELD" priority="2" rank="18" abbrev="UuF" category="PERFORMANCE" first="1" last="2" removedByChange="true">
+    <Class classname="EmailAccount1">
+      <SourceLine classname="EmailAccount1" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Class>
+    <Field classname="EmailAccount1" name="map" signature="LMap;" isStatic="true">
+      <SourceLine classname="EmailAccount1" start="18" end="18" startBytecode="0" endBytecode="0" sourcefile="EmailAccount1.java" sourcepath="EmailAccount1.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="1" rank="15" abbrev="DLS" category="STYLE" first="34" last="34" removedByChange="true">
+    <Class classname="EmailAccountMain">
+      <SourceLine classname="EmailAccountMain" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Class>
+    <Method classname="EmailAccountMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="EmailAccountMain" start="26" end="65" startBytecode="0" endBytecode="100" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Method>
+    <LocalVariable name="names" register="8" pc="134" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="EmailAccountMain" start="42" end="42" startBytecode="132" endBytecode="132" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <SourceLine classname="EmailAccountMain" start="42" end="42" startBytecode="132" endBytecode="132" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="names"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="20" last="20" removedByChange="true">
+    <Class classname="EmailAccountMain">
+      <SourceLine classname="EmailAccountMain" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Class>
+    <Method classname="EmailAccountMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="EmailAccountMain" start="24" end="55" startBytecode="0" endBytecode="75" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Method>
+    <LocalVariable name="i" register="6" pc="105" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="EmailAccountMain" start="37" end="37" startBytecode="105" endBytecode="105" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <SourceLine classname="EmailAccountMain" start="37" end="37" startBytecode="105" endBytecode="105" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="i"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="2" rank="11" abbrev="ES" category="BAD_PRACTICE" first="20" last="23" removedByChange="true">
+    <Class classname="EmailAccountMain">
+      <SourceLine classname="EmailAccountMain" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Class>
+    <Method classname="EmailAccountMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="EmailAccountMain" start="24" end="59" startBytecode="0" endBytecode="88" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String"/>
+    </Type>
+    <String value="" role="STRING_CONSTANT"/>
+    <LocalVariable name="name" register="4" pc="145" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="EmailAccountMain" start="30" end="30" startBytecode="147" endBytecode="147" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <SourceLine classname="EmailAccountMain" start="30" end="30" startBytecode="147" endBytecode="147" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.EMPTY_AND_UNKNOWN" value="true"/>
+  </BugInstance>
+  <BugInstance type="IL_INFINITE_LOOP" priority="1" rank="8" abbrev="IL" category="CORRECTNESS" first="20" last="23" removedByChange="true">
+    <Class classname="EmailAccountMain">
+      <SourceLine classname="EmailAccountMain" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Class>
+    <Method classname="EmailAccountMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="EmailAccountMain" start="24" end="59" startBytecode="0" endBytecode="534" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    </Method>
+    <SourceLine classname="EmailAccountMain" start="30" end="30" startBytecode="147" endBytecode="147" sourcefile="EmailAccountMain.java" sourcepath="EmailAccountMain.java"/>
+    <LocalVariable name="name" register="4" pc="147" role="LOCAL_VARIABLE_NAMED"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Thu, 20 Apr 2017 12:07:50 -0400" total_classes="1" referenced_classes="19" total_bugs="0" total_size="27" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="0.27" clock_seconds="0.19" peak_mbytes="597.90" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="1" total_size="27">
+      <ClassStats class="EmailAccountMain" sourceFile="EmailAccountMain.java" interface="false" size="27" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="54" invocations="336" avgMicrosecondsPerInvocation="161" maxMicrosecondsPerInvocation="3043" standardDeviationMircosecondsPerInvocation="321"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="46" invocations="2" avgMicrosecondsPerInvocation="23157" maxMicrosecondsPerInvocation="42499" standardDeviationMircosecondsPerInvocation="19342"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="17" invocations="336" avgMicrosecondsPerInvocation="52" maxMicrosecondsPerInvocation="160" standardDeviationMircosecondsPerInvocation="21"/>
+      <ClassProfile name="edu.umd.cs.findbugs.DetectorToDetector2Adapter" totalMilliseconds="17" invocations="149" avgMicrosecondsPerInvocation="114" maxMicrosecondsPerInvocation="16891" standardDeviationMircosecondsPerInvocation="1379"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1492702312569" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1492702312569" release="" codeSize="13" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1492702323285" release="" codeSize="13" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1492702354698" release="" codeSize="26" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1492702370774" release="" codeSize="27" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1492702376964" release="" codeSize="27" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1492702384389" release="" codeSize="29" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1492702882793" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1492702902047" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1492702917283" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="10" timestamp="1492702929742" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="11" timestamp="1492702931982" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="12" timestamp="1492702937274" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="13" timestamp="1492702979214" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="14" timestamp="1492702990815" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="15" timestamp="1492703014009" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="16" timestamp="1492703030243" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="17" timestamp="1492703038985" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="18" timestamp="1492703051026" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="19" timestamp="1492703057987" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="20" timestamp="1492703064349" release="" codeSize="23" numClasses="1"/>
+    <AppVersion sequence="21" timestamp="1492703102120" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="22" timestamp="1492703104118" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="23" timestamp="1492703112668" release="" codeSize="26" numClasses="1"/>
+    <AppVersion sequence="24" timestamp="1492703136499" release="" codeSize="26" numClasses="1"/>
+    <AppVersion sequence="25" timestamp="1492703305901" release="" codeSize="27" numClasses="1"/>
+    <AppVersion sequence="26" timestamp="1492703306854" release="" codeSize="27" numClasses="1"/>
+    <AppVersion sequence="27" timestamp="1492703310709" release="" codeSize="28" numClasses="1"/>
+    <AppVersion sequence="28" timestamp="1492703326751" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="29" timestamp="1492703334352" release="" codeSize="29" numClasses="1"/>
+    <AppVersion sequence="30" timestamp="1492703470531" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="31" timestamp="1492703563354" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="32" timestamp="1492703570499" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="33" timestamp="1492703603792" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="34" timestamp="1492703620335" release="" codeSize="30" numClasses="1"/>
+    <AppVersion sequence="35" timestamp="1492703671454" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="36" timestamp="1492703686450" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="37" timestamp="1492703687220" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="38" timestamp="1492703700201" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="39" timestamp="1492703775187" release="" codeSize="33" numClasses="1"/>
+    <AppVersion sequence="40" timestamp="1492703941761" release="" codeSize="31" numClasses="1"/>
+    <AppVersion sequence="41" timestamp="1492703980443" release="" codeSize="33" numClasses="1"/>
+    <AppVersion sequence="42" timestamp="1492703998563" release="" codeSize="29" numClasses="1"/>
+    <AppVersion sequence="43" timestamp="1492704049022" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="44" timestamp="1492704078026" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="45" timestamp="1492704079159" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="46" timestamp="1492704199961" release="" codeSize="29" numClasses="1"/>
+    <AppVersion sequence="47" timestamp="1492704231196" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="48" timestamp="1492704252083" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="49" timestamp="1492704254231" release="" codeSize="29" numClasses="1"/>
+    <AppVersion sequence="50" timestamp="1492704395866" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="51" timestamp="1492704415093" release="" codeSize="29" numClasses="1"/>
+    <AppVersion sequence="52" timestamp="1492704429834" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="53" timestamp="1492704430982" release="" codeSize="29" numClasses="1"/>
+  </History>
+</BugCollection>

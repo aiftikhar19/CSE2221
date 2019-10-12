@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;HelloWorld.java&apos; to &apos;MonteCarlo.java&apos;&#x0D;&#x0A;- Original project: &apos;Practice&apos;&#x0D;&#x0A;- Original element: &apos;HelloWorld.java&apos;&#x0D;&#x0A;- Renamed element: &apos;MonteCarlo.java&apos;" description="Rename compilation unit &apos;HelloWorld.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{HelloWorld.java" name="MonteCarlo.java" references="false" stamp="1472612281632" version="1.0"/>
+</session>

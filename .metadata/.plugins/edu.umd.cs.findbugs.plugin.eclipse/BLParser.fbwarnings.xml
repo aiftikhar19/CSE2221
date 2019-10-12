@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="8" timestamp="1492016998746" analysisTimestamp="1492016998454" release="">
+  <Project projectName="BLParser">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\BLParser\bin\StatementTest.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\BLParser\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\BLParser\test</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\BLParser\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 12 Apr 2017 13:09:58 -0400" total_classes="1" referenced_classes="17" total_bugs="0" total_size="57" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="0.83" clock_seconds="0.29" peak_mbytes="565.15" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="1" total_size="57">
+      <ClassStats class="StatementTest" sourceFile="StatementTest.java" interface="false" size="57" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="77" invocations="331" avgMicrosecondsPerInvocation="233" maxMicrosecondsPerInvocation="5256" standardDeviationMircosecondsPerInvocation="472"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="66" invocations="2" avgMicrosecondsPerInvocation="33030" maxMicrosecondsPerInvocation="60317" standardDeviationMircosecondsPerInvocation="27287"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="28" invocations="332" avgMicrosecondsPerInvocation="85" maxMicrosecondsPerInvocation="686" standardDeviationMircosecondsPerInvocation="54"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="22" invocations="17" avgMicrosecondsPerInvocation="1304" maxMicrosecondsPerInvocation="20956" standardDeviationMircosecondsPerInvocation="4914"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="12" invocations="65" avgMicrosecondsPerInvocation="187" maxMicrosecondsPerInvocation="2345" standardDeviationMircosecondsPerInvocation="311"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="11" invocations="17" avgMicrosecondsPerInvocation="686" maxMicrosecondsPerInvocation="4171" standardDeviationMircosecondsPerInvocation="1135"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1491322698190" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1491322698190" release="" codeSize="87" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1491322705728" release="" codeSize="82" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1492016942250" release="" codeSize="87" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1492016947781" release="" codeSize="97" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1492016955841" release="" codeSize="82" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1492016962828" release="" codeSize="126" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1492016992050" release="" codeSize="55" numClasses="1"/>
+  </History>
+</BugCollection>

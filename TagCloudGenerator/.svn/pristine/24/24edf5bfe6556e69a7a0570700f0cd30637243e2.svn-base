@@ -1,0 +1,209 @@
+import java.util.Comparator;
+
+import components.map.Map;
+import components.set.Set;
+import components.simplereader.SimpleReader;
+import components.simplereader.SimpleReader1L;
+import components.simplewriter.SimpleWriter;
+import components.simplewriter.SimpleWriter1L;
+
+/**
+ *
+ * @author Aisha Iftikhar
+ * @author Cery Hughes
+ *
+ */
+public final class TagCloudGenerator {
+
+    /**
+     * Compare {@code Map.Pair<String, Integer>}s in alphabetical order
+     * according to key value.
+     */
+    private static class sortAlphabet
+            implements Comparator<Map.Pair<String, Integer>> {
+        @Override
+        public int compare(Map.Pair<String, Integer> o1,
+                Map.Pair<String, Integer> o2) {
+
+            String s1 = o1.key().toLowerCase();
+            String s2 = o2.key().toLowerCase();
+
+            return s1.compareTo(s2);
+        }
+    }
+
+    /**
+     * Compare {@code Map.Pair<String, Integer>}s by decreasing order by value.
+     */
+    private static class sortNumerical
+            implements Comparator<Map.Pair<String, Integer>> {
+        @Override
+        public int compare(Map.Pair<String, Integer> o1,
+                Map.Pair<String, Integer> o2) {
+
+            Integer i1 = o1.value();
+            Integer i2 = o2.value();
+            return i2.compareTo(i1);
+        }
+    }
+
+    /**
+     * Private constructor so this utility class cannot be instantiated.
+     */
+    private TagCloudGenerator() {
+    }
+
+    /**
+     * Global String containing list of separators.
+     */
+    private static final String SEPARATORS = "., ()-_?/!@#$%^&*\t1234567890:"
+            + ";[]{}+=~`><";
+
+    /**
+     * Outputs the opening tags in the generated HTML file.
+     *
+     * @param out
+     *            the output stream
+     * @param inFile
+     *            the name of the file to read from
+     * @updates {@code out.content}
+     * @requires <pre>
+     * {@code out.is_open and [inFile is not null]}
+     * </pre>
+     * @ensures <pre>
+     * {@code out.content = #out.content * [the HTML opening tags]}
+     * </pre>
+     */
+    private static void outputHTMLHeader(SimpleWriter out, String inFile,
+            int numWords) {
+        assert out != null : "Violation of: out is not null";
+        assert out.isOpen() : "Violation of: out.is_open";
+        assert inFile != null : "Violation of: inFile is not null";
+        /*
+         * Output the index header HTML text.
+         */
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Top " + numWords + " words in data/" + inFile
+                + "</title>");
+        out.println(
+                "<link href=\"tagcloud.css\" rel=\"stylesheet\" type=\"text/css\">");
+        out.println("</head>");
+        out.println("<body>");
+        out.println(
+                "<h2>Top " + numWords + " words in data/" + inFile + "</h2>");
+        out.println("<hr>");
+    }
+
+    /**
+     * Returns the first "word" (maximal length string of characters not in
+     * {@code separators}) or "separator string" (maximal length string of
+     * characters in {@code separators}) in the given {@code text} starting at
+     * the given {@code position}.
+     *
+     * @param text
+     *            the {@code String} from which to get the word or separator
+     *            string
+     * @param position
+     *            the starting index
+     * @param separators
+     *            the {@code Set} of separator characters
+     * @return the first word or separator string found in {@code text} starting
+     *         at index {@code position}
+     * @requires <pre>
+     * {@code 0 <= position < |text|}
+     * </pre>
+     * @ensures <pre>
+     * {@code nextWordOrSeparator =
+     *   text[position, position + |nextWordOrSeparator|)  and
+     * if entries(text[position, position + 1)) intersection separators = {}
+     * then
+     *   entries(nextWordOrSeparator) intersection separators = {}  and
+     *   (position + |nextWordOrSeparator| = |text|  or
+     *    entries(text[position, position + |nextWordOrSeparator| + 1))
+     *      intersection separators /= {})
+     * else
+     *   entries(nextWordOrSeparator) is subset of separators  and
+     *   (position + |nextWordOrSeparator| = |text|  or
+     *    entries(text[position, position + |nextWordOrSeparator| + 1))
+     *      is not subset of separators)}
+     * </pre>
+     */
+    private static String nextWordOrSeparator(String text, int position,
+            Set<Character> separators) {
+        assert text != null : "Violation of: text is not null";
+        assert separators != null : "Violation of: separators is not null";
+        assert 0 <= position : "Violation of: 0 <= position";
+        assert position < text.length() : "Violation of: position < |text|";
+
+        char first = text.charAt(position);
+        String nextWordOrSeparator = "";
+        int i = position + 1;
+        nextWordOrSeparator = nextWordOrSeparator + first;
+        if (!separators.contains(first)) {
+            while (i < text.length() && !separators.contains(first)) {
+                first = text.charAt(i);
+                if (!separators.contains(first)) {
+                    String concat = "" + first;
+                    nextWordOrSeparator = nextWordOrSeparator.concat(concat);
+
+                }
+                i++;
+            }
+        } else {
+            while (i < text.length() && separators.contains(first)) {
+                first = text.charAt(i);
+                if (separators.contains(first)) {
+                    String concat = "" + first;
+                    nextWordOrSeparator = nextWordOrSeparator.concat(concat);
+                }
+                i++;
+            }
+        }
+        return nextWordOrSeparator;
+    }
+
+    /**
+     * Main method.
+     *
+     * @param args
+     *            the command line arguments
+     */
+    public static void main(String[] args) {
+        SimpleReader in = new SimpleReader1L();
+        SimpleWriter out = new SimpleWriter1L();
+        /*
+         * Get the input file's name and the name of the file to write to.
+         */
+        out.print("Enter the name of the input text file: ");
+        String inFile = in.nextLine();
+        out.print("Enter the name of the output file: ");
+        String outFile = in.nextLine();
+        out.print("Enter number of words to be included in tag cloud: ");
+        int numWords = in.nextInteger();
+        /*
+         * Create the HTML file
+         */
+        SimpleWriter output = new SimpleWriter1L(outFile);
+        /*
+         * Output the header tags
+         */
+        outputHTMLHeader(output, inFile, numWords);
+        /*
+         * Create a reader for the input file
+         */
+        SimpleReader input = new SimpleReader1L(inFile);
+
+        /*
+         * Close streams
+         */
+        input.close();
+        output.close();
+        /*
+         * Close input and output streams
+         */
+        in.close();
+        out.close();
+    }
+
+}

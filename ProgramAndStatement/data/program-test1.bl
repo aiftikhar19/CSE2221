@@ -1,0 +1,22 @@
+PROGRAM Test1 IS
+  
+  INSTRUCTION only IS
+      WHILE random DO
+        infect
+      END WHILE
+      IF random THEN
+        infect
+      ELSE
+         skip
+      END IF
+  END only
+
+BEGIN
+  WHILE true DO
+    only
+    IF random THEN
+        infect
+        END IF
+  END WHILE
+  infect
+END Test1

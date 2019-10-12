@@ -1,0 +1,416 @@
+import java.util.Comparator;
+
+import components.map.Map;
+import components.map.Map.Pair;
+import components.map.Map1L;
+import components.set.Set;
+import components.set.Set1L;
+import components.simplereader.SimpleReader;
+import components.simplereader.SimpleReader1L;
+import components.simplewriter.SimpleWriter;
+import components.simplewriter.SimpleWriter1L;
+import components.sortingmachine.SortingMachine;
+import components.sortingmachine.SortingMachine2;
+
+/**
+ *
+ * @author Aisha Iftikhar
+ * @author Cery Hughes
+ *
+ */
+public final class TagCloudGenerator {
+
+    /**
+     * Compare {@code Map.Pair<String, Integer>}s in alphabetical order
+     * according to key value.
+     */
+    private static class SortAlphabet
+            implements Comparator<Map.Pair<String, Integer>> {
+        @Override
+        public int compare(Map.Pair<String, Integer> o1,
+                Map.Pair<String, Integer> o2) {
+
+            String s1 = o1.key();
+            String s2 = o2.key();
+
+            return s1.compareToIgnoreCase(s2);
+        }
+    }
+
+    /**
+     * Compare {@code Map.Pair<String, Integer>}s by decreasing order by value.
+     */
+    private static class SortNumerical
+            implements Comparator<Map.Pair<String, Integer>> {
+        @Override
+        public int compare(Map.Pair<String, Integer> o1,
+                Map.Pair<String, Integer> o2) {
+
+            Integer i1 = o1.value();
+            Integer i2 = o2.value();
+            return i2.compareTo(i1);
+        }
+    }
+
+    /**
+     * Private constructor so this utility class cannot be instantiated.
+     */
+    private TagCloudGenerator() {
+    }
+
+    /**
+     * Global String containing list of separators.
+     */
+    private static final String SEPARATORS = "., ()-_?/!@#$%^&*\t1234567890:"
+            + ";[]{}+=~`><";
+
+    /**
+     * Outputs the opening tags in the generated HTML file.
+     *
+     * @param out
+     *            the output stream
+     * @param inFile
+     *            the name of the file to read from
+     * @param numWords
+     *            the number of words with the highest word counts to be
+     *            displayed
+     * @updates {@code out.content}
+     * @requires <pre>
+     * {@code out.is_open and [inFile is not null]}
+     * </pre>
+     * @ensures <pre>
+     * {@code out.content = #out.content * [the HTML opening tags]}
+     * </pre>
+     */
+    private static void outputHTMLHeader(SimpleWriter out, String inFile,
+            int numWords) {
+        assert out != null : "Violation of: out is not null";
+        assert out.isOpen() : "Violation of: out.is_open";
+        assert inFile != null : "Violation of: inFile is not null";
+        /*
+         * Output the index header HTML text.
+         */
+        out.println("<html>");
+        out.println("<head>");
+        out.println(
+                "<title>Top " + numWords + " words in " + inFile + "</title>");
+        out.println(
+                "<link href=\"doc/tagcloud.css\" rel=\"stylesheet\" type=\"text/css\">");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h2>Top " + numWords + " words in " + inFile + "</h2>");
+        out.println("<hr>");
+        out.println("<div class = \"cdiv\">");
+        out.println("<p class = \"cbox\">");
+    }
+
+    /**
+     * Reads file read by SimpleReader text, inputting each unique,
+     * case-sensitive word as a key of wordCounts and the number of times it
+     * appears as its value.
+     *
+     * @param wordCounts
+     *            the Map to hold each word and its count
+     * @param text
+     *            the SimpleReader connected to the file whose words and counts
+     *            are to be recorded
+     * @param separators
+     *            the Set of characters defined as separating words
+     * @replaces wordCounts
+     * @requires text is open
+     * @ensures <pre>each key in wordCounts is a unique word as defined by separators
+     *               from text.content and
+     *               each unique word from text.content is a key in wordCounts and
+     *               each key's value is the # of times it appears in in.content and
+     *               text is open
+     *          </pre>
+     */
+    private static void readFile(Map<String, Integer> wordCounts,
+            Set<Character> separators, SimpleReader text) {
+        //Go through each line of text in file
+        while (!text.atEOS()) {
+            String currentLine = text.nextLine().toLowerCase();
+            int linePosition = 0;
+            //Get each word/separator from currentLine
+            while (linePosition < currentLine.length()) {
+                String word = nextWordOrSeparator(currentLine, linePosition,
+                        separators);
+                //If the substring is a word(and not a separator), update wordsToCounts
+                if (!separators.contains(word.charAt(0))) {
+                    //If word hasn't appeared before, add it to wordsToCounts
+                    if (!wordCounts.hasKey(word)) {
+                        wordCounts.add(word, 1);
+                    } else {
+                        //Otherwise, increment its count
+                        int newCount = wordCounts.value(word) + 1;
+                        wordCounts.remove(word);
+                        wordCounts.add(word, newCount);
+                    }
+                }
+                //Update position in currentLine
+                linePosition += word.length();
+
+            }
+        }
+
+    }
+
+    /**
+     * Returns the first "word" (maximal length string of characters not in
+     * {@code separators}) or "separator string" (maximal length string of
+     * characters in {@code separators}) in the given {@code text} starting at
+     * the given {@code position}.
+     *
+     * @param text
+     *            the {@code String} from which to get the word or separator
+     *            string
+     * @param position
+     *            the starting index
+     * @param separators
+     *            the {@code Set} of separator characters
+     * @return the first word or separator string found in {@code text} starting
+     *         at index {@code position}
+     * @requires <pre>
+     * {@code 0 <= position < |text|}
+     * </pre>
+     * @ensures <pre>
+     * {@code nextWordOrSeparator =
+     *   text[position, position + |nextWordOrSeparator|)  and
+     * if entries(text[position, position + 1)) intersection separators = {}
+     * then
+     *   entries(nextWordOrSeparator) intersection separators = {}  and
+     *   (position + |nextWordOrSeparator| = |text|  or
+     *    entries(text[position, position + |nextWordOrSeparator| + 1))
+     *      intersection separators /= {})
+     * else
+     *   entries(nextWordOrSeparator) is subset of separators  and
+     *   (position + |nextWordOrSeparator| = |text|  or
+     *    entries(text[position, position + |nextWordOrSeparator| + 1))
+     *      is not subset of separators)}
+     * </pre>
+     */
+    private static String nextWordOrSeparator(String text, int position,
+            Set<Character> separators) {
+        assert text != null : "Violation of: text is not null";
+        assert separators != null : "Violation of: separators is not null";
+        assert 0 <= position : "Violation of: 0 <= position";
+        assert position < text.length() : "Violation of: position < |text|";
+
+        //Check if char at position is a separator or not
+        boolean isSeparator = separators.contains(text.charAt(position));
+
+        /*
+         * Keep adding to ending index for each next char so long as it has the
+         * same separator/nonseparator value(isSeparator true/false) as the char
+         * at position or until the *end of text is reached
+         */
+        int nextPosition = position + 1;
+        while (nextPosition < text.length() && (separators
+                .contains(text.charAt(nextPosition)) == isSeparator)) {
+
+            nextPosition++;
+
+        }
+        return text.substring(position, nextPosition);
+    }
+
+    /**
+     * Gets the appropriate font size for a word belonging in a tag cloud whose
+     * range of counts is [scaleMax, scaleMin].
+     *
+     * @param scaleMax
+     *            the maximum count in the tag cloud words
+     * @param scaleMin
+     *            the minimum count in the tag cloud words
+     * @param count
+     *            the count of the word whose font size is to be calculated
+     * @requires scaleMax =< count =< scaleMin
+     * @ensures getFontSize is a valid CSS/HTML font size that varies according
+     *          to count relative to the scale [scaleMin, scaleMAx]
+     * @return the appropriate font size for the word that appears count number
+     *         of times for a tag cloud of the given range
+     */
+
+    private static String getFontSize(int scaleMax, int scaleMin, int count) {
+        final int maxFontSize = 48;
+        final int minFontSize = 11;
+
+        //Get in correct interval according to indexing formula
+        int fontNumber = maxFontSize - minFontSize;
+        fontNumber *= (count - scaleMin);
+        fontNumber /= (scaleMax - scaleMin);
+        fontNumber += minFontSize;
+
+        return "f" + fontNumber;
+
+    }
+
+    /**
+     * Gives the String representation of the HTML tags appropriate for the
+     * given word and its count.
+     *
+     * @param wordCount
+     *            the Map.Pair whose word and count are to be portrayed in the
+     *            tag cloud via HTML tags
+     * @param fontSize
+     *            the size of the font the word is to appear in in the tag cloud
+     * @requires fontSize is a valid HTML/CSS font size
+     *
+     * @return the HTML tag for the word and count
+     */
+    private static String wordHtml(Map.Pair<String, Integer> wordCount,
+            String fontSize) {
+        String tag = "<span style=\"cursor:default\" class=\"" + fontSize
+                + "\" title=\"count: " + wordCount.value() + "\">"
+                + wordCount.key() + "</span>";
+        return tag;
+    }
+
+    /**
+     * Outputs the HTML for a total of numWords words from wordCounts with the
+     * highest counts in alphabetical order for a CSS tag cloud.
+     *
+     * @param output
+     *            the file to print the top words to
+     * @param numWords
+     *            the number of top words to print
+     * @param wordCounts
+     *            the map of words and their counts
+     * @clears wordCounts
+     * @ensures output.content = #output.content + numWords many top words from
+     *          wordCounts output is open
+     */
+    private static void outputTopWords(SimpleWriter output, int numWords,
+            Map<String, Integer> wordCounts) {
+
+        /*
+         * Sort words by counts
+         */
+        Comparator<Pair<String, Integer>> countOrder = new SortNumerical();
+        SortingMachine<Map.Pair<String, Integer>> countSort;
+        countSort = new SortingMachine2<Map.Pair<String, Integer>>(countOrder);
+        while (wordCounts.size() > 0) {
+            countSort.add(wordCounts.removeAny());
+        }
+        countSort.changeToExtractionMode();
+
+        Comparator<Pair<String, Integer>> alphOrder = new SortAlphabet();
+        SortingMachine<Map.Pair<String, Integer>> alphSort;
+        alphSort = new SortingMachine2<Map.Pair<String, Integer>>(alphOrder);
+
+        //To best distribute font sizes, get largest count value
+        int maxCount = 0;
+        if (countSort.size() > 0) {
+            Map.Pair<String, Integer> maxPair = countSort.removeFirst();
+            maxCount = maxPair.value();
+            alphSort.add(maxPair);
+        }
+        /*
+         * Sort top words alphabetically
+         */
+        int topCounter = 0;
+        while (topCounter < numWords && countSort.size() > 1) {
+            Map.Pair<String, Integer> wordCount = countSort.removeFirst();
+            alphSort.add(wordCount);
+            topCounter++;
+        }
+        //To best distribute font sizes, get smallest count value
+        int minCount = 0;
+        if (countSort.size() > 0) {
+            Map.Pair<String, Integer> minPair = countSort.removeFirst();
+            minCount = minPair.value();
+            alphSort.add(minPair);
+
+        }
+        alphSort.changeToExtractionMode();
+
+        /*
+         * Output HTML for the top words
+         */
+        while (alphSort.size() > 0) {
+            Map.Pair<String, Integer> wordCount = alphSort.removeFirst();
+            String fontSize = getFontSize(maxCount, minCount,
+                    wordCount.value());
+            output.println(wordHtml(wordCount, fontSize));
+        }
+    }
+
+    /**
+     * Generates the set of characters in the given {@code String} into the
+     * given {@code Set}.
+     *
+     * @param str
+     *            the given {@code String}
+     * @return set of characters equal to entries(str)
+     * @ensures generateElements = entries(str)
+     **/
+    private static Set<Character> generateElements(String str) {
+        Set<Character> elements = new Set1L<Character>();
+        for (int i = 0; i < str.length(); i++) {
+            if (!elements.contains(str.charAt(i))) {
+                elements.add(str.charAt(i));
+            }
+        }
+        return elements;
+
+    }
+
+    private static void createTagCloud(SimpleWriter output, SimpleReader input,
+            int numWords) {
+        Map<String, Integer> wordCounts = new Map1L<String, Integer>();
+        readFile(wordCounts, generateElements(SEPARATORS), input);
+        outputTopWords(output, numWords, wordCounts);
+
+        // output footer
+        output.println("</p>");
+        output.println("</div>");
+        output.println("</body>");
+        output.println("</html>");
+
+    }
+
+    /**
+     * Main method.
+     *
+     * @param args
+     *            the command line arguments
+     */
+    public static void main(String[] args) {
+        SimpleReader in = new SimpleReader1L();
+        SimpleWriter out = new SimpleWriter1L();
+        /*
+         * Get the input file's name and the name of the file to write to.
+         */
+        out.print("Enter the name of the input text file: ");
+        String inFile = in.nextLine();
+        out.print("Enter the name of the output file: ");
+        String outFile = in.nextLine();
+        out.print("Enter number of words to be included in tag cloud: ");
+        int numWords = in.nextInteger();
+        /*
+         * Create the HTML file
+         */
+        SimpleWriter output = new SimpleWriter1L(outFile);
+        /*
+         * Output the header tags
+         */
+        outputHTMLHeader(output, inFile, numWords);
+        /*
+         * Create a reader for the input file
+         */
+        SimpleReader input = new SimpleReader1L(inFile);
+        createTagCloud(output, input, numWords);
+
+        /*
+         * Close streams
+         */
+        input.close();
+        output.close();
+        /*
+         * Close input and output streams
+         */
+        in.close();
+        out.close();
+    }
+
+}

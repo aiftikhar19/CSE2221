@@ -1,0 +1,318 @@
+import java.util.Iterator;
+
+import components.map.Map;
+import components.map.Map.Pair;
+import components.map.Map1L;
+import components.queue.Queue;
+import components.queue.Queue1L;
+import components.set.Set;
+import components.set.Set1L;
+import components.simplereader.SimpleReader;
+import components.simplereader.SimpleReader1L;
+import components.simplewriter.SimpleWriter;
+import components.simplewriter.SimpleWriter1L;
+
+/**
+ * This program counts word occurrences in a given input file and outputs an
+ * HTML document with a table of the words and counts listed in alphabetical
+ * order.
+ *
+ * @author Aisha Iftikhar
+ *
+ */
+public final class WordCounter {
+
+    /**
+     * Private constructor so this utility class cannot be instantiated.
+     */
+    private WordCounter() {
+    }
+
+    /**
+     * Global String containing list of separators.
+     */
+    private static final String SEPARATORS = "., ()-_?/!@#$%^&*\t1234567890:"
+            + ";[]{}+=~`><";
+
+    /**
+     * Outputs the opening tags in the generated HTML file.
+     *
+     * @param out
+     *            the output stream
+     * @param inFile
+     *            the name of the file to read from
+     * @updates {@code out.content}
+     * @requires <pre>
+     * {@code out.is_open and [inFile is not null]}
+     * </pre>
+     * @ensures <pre>
+     * {@code out.content = #out.content * [the HTML opening tags]}
+     * </pre>
+     */
+    private static void outputHTMLHeader(SimpleWriter out, String inFile) {
+        assert out != null : "Violation of: out is not null";
+        assert out.isOpen() : "Violation of: out.is_open";
+        assert inFile != null : "Violation of: inFile is not null";
+        /*
+         * Output the index header HTML text.
+         */
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Words Counted in " + inFile + "</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h2>Words Counted in " + inFile + "</h2>");
+        out.println("<hr />");
+        out.println("<table border=\"1\">");
+        out.println("<tr>");
+        out.println("<th>Words</th>");
+        out.println("<th>Counts</th>");
+        out.println("</tr>");
+    }
+
+    /**
+     * Places all of the keys from mapOfWords into a queue, sorts them according
+     * to String.CASE_INSENSITIVE_ORDER and returns this sorted queue.
+     *
+     * @param mapOfWords
+     *            a map of terms as keys and their definitions as values
+     * @return a queue with alphabetically sorted keys from mapOfWords
+     *
+     * @requires <pre>
+     * {@code [mapOfWords is not null] and mapOfWords /= empty_string}
+     * </pre>
+     * @ensures <pre>
+     * {@code q = [#q ordered by the relation computed by String.CASE_INSENSITIVE_ORDER]}
+     * </pre>
+     */
+    private static Queue<String> sortKeys(Map<String, Integer> mapOfWords) {
+        assert mapOfWords != null : "Violation of: mapOfWords is not null";
+        assert mapOfWords.size() > 0 : "Violation of: mapOfWords is not empty";
+
+        // Create an iterator with type Pair in order to transfer to map
+        Iterator<Pair<String, Integer>> iterator = mapOfWords.iterator();
+
+        // Create a queue to store the unsorted keys
+        Queue<String> list = new Queue1L<>();
+
+        // Create comparitor to alphabetize using t
+        while (iterator.hasNext()) {
+            Pair<String, Integer> temp = iterator.next();
+            //Add each key to the queue.
+            list.enqueue(temp.key());
+            //sort
+            list.sort(String.CASE_INSENSITIVE_ORDER);
+        }
+        return list;
+    }
+
+    /**
+     * Generates the set of characters in the given {@code String} into the
+     * given {@code Set}.
+     *
+     * @param str
+     *            the given {@code String}
+     * @param strSet
+     *            the {@code Set} to be replaced
+     * @replaces {@code strSet}
+     * @ensures <pre>
+     * {@code strSet = entries(str)}
+     * </pre>
+     */
+    private static void generateElements(String str, Set<Character> strSet) {
+        assert str != null : "Violation of: str is not null";
+        assert strSet != null : "Violation of: strSet is not null";
+
+        /*
+         * Loop through string and add every unique character to the set s.
+         */
+        for (int i = 0; i < str.length(); i++) {
+            if (!strSet.contains(str.charAt(i))) {
+                strSet.add(str.charAt(i));
+            }
+        }
+    }
+
+    /**
+     * Returns the first "word" (maximal length string of characters not in
+     * {@code separators}) or "separator string" (maximal length string of
+     * characters in {@code separators}) in the given {@code text} starting at
+     * the given {@code position}.
+     *
+     * @param text
+     *            the {@code String} from which to get the word or separator
+     *            string
+     * @param position
+     *            the starting index
+     * @param separators
+     *            the {@code Set} of separator characters
+     * @return the first word or separator string found in {@code text} starting
+     *         at index {@code position}
+     * @requires <pre>
+     * {@code 0 <= position < |text|}
+     * </pre>
+     * @ensures <pre>
+     * {@code nextWordOrSeparator =
+     *   text[position, position + |nextWordOrSeparator|)  and
+     * if entries(text[position, position + 1)) intersection separators = {}
+     * then
+     *   entries(nextWordOrSeparator) intersection separators = {}  and
+     *   (position + |nextWordOrSeparator| = |text|  or
+     *    entries(text[position, position + |nextWordOrSeparator| + 1))
+     *      intersection separators /= {})
+     * else
+     *   entries(nextWordOrSeparator) is subset of separators  and
+     *   (position + |nextWordOrSeparator| = |text|  or
+     *    entries(text[position, position + |nextWordOrSeparator| + 1))
+     *      is not subset of separators)}
+     * </pre>
+     */
+    private static String nextWordOrSeparator(String text, int position,
+            Set<Character> separators) {
+        assert text != null : "Violation of: text is not null";
+        assert separators != null : "Violation of: separators is not null";
+        assert 0 <= position : "Violation of: 0 <= position";
+        assert position < text.length() : "Violation of: position < |text|";
+
+        char first = text.charAt(position);
+        String nextWordOrSeparator = "";
+        int i = position + 1;
+        nextWordOrSeparator = nextWordOrSeparator + first;
+        if (!separators.contains(first)) {
+            while (i < text.length() && !separators.contains(first)) {
+                first = text.charAt(i);
+                if (!separators.contains(first)) {
+                    String concat = "" + first;
+                    nextWordOrSeparator = nextWordOrSeparator.concat(concat);
+
+                }
+                i++;
+            }
+        } else {
+            while (i < text.length() && separators.contains(first)) {
+                first = text.charAt(i);
+                if (separators.contains(first)) {
+                    String concat = "" + first;
+                    nextWordOrSeparator = nextWordOrSeparator.concat(concat);
+                }
+                i++;
+            }
+        }
+        return nextWordOrSeparator;
+    }
+
+    /**
+     * Reads input and counts occurences of words and then creates table listing
+     * individual words and occurrences in alphabetical order.
+     *
+     * @param out
+     *            the output stream
+     * @param lines
+     *            a queue containing each line from the input text
+     *
+     */
+    private static void processTable(SimpleWriter out, Queue<String> lines) {
+
+        // Create the list of separators
+        Set<Character> separators = new Set1L<>();
+        generateElements(SEPARATORS, separators);
+
+        // Separate individual words
+        Queue<String> words = new Queue1L<>();
+        while (lines.length() > 0) {
+            String newLine = lines.dequeue();
+            int position = 0;
+            while (position < newLine.length()) {
+                String temp = nextWordOrSeparator(newLine, position,
+                        separators);
+                position = position + temp.length();
+                // Remove any separators from list
+                if (temp.length() > 0 && !separators.contains(temp.charAt(0))) {
+                    words.enqueue(temp);
+                }
+            }
+        }
+        // Generate map with words as keys and occurences as values
+        Map<String, Integer> wordsAndCounts = new Map1L<>();
+        while (words.length() > 0) {
+            String key = words.dequeue();
+            // If the word is already on the map, increment it
+            // otherwise, create new listing with the number 1
+            if (!wordsAndCounts.hasKey(key)) {
+                wordsAndCounts.add(key, 1);
+            } else {
+                Map.Pair<String, Integer> temp = wordsAndCounts.remove(key);
+                int value = temp.value();
+                value++;
+                wordsAndCounts.add(key, value);
+            }
+        }
+        /*
+         * Create a queue of sorted keys from the map.
+         */
+        Queue<String> orderedWords = sortKeys(wordsAndCounts);
+        /*
+         * Turn the queue of sorted words into a table.
+         */
+        while (orderedWords.length() > 0) {
+            String word = orderedWords.dequeue();
+            out.println("<tr>");
+            out.println("<td>" + word + "</td>");
+            out.println("<td>" + wordsAndCounts.value(word) + "</td>");
+            out.println("</tr>");
+        }
+    }
+
+    /**
+     * Main method.
+     *
+     * @param args
+     *            the command line arguments
+     */
+    public static void main(String[] args) {
+        SimpleReader in = new SimpleReader1L();
+        SimpleWriter out = new SimpleWriter1L();
+        /*
+         * Get the input file's name and the name of the file to write to.
+         */
+        out.print("Enter the name of the input text file: ");
+        String inFile = in.nextLine();
+        out.print("Enter the name of the output file: ");
+        String outFile = in.nextLine();
+        /*
+         * Create the HTML file
+         */
+        SimpleWriter output = new SimpleWriter1L(outFile);
+        /*
+         * Output the header tags
+         */
+        outputHTMLHeader(output, inFile);
+        /*
+         * Create a reader for the input file
+         */
+        SimpleReader input = new SimpleReader1L(inFile);
+        /*
+         * Make a map using the input
+         */
+        Queue<String> lines = new Queue1L<>();
+        while (!input.atEOS()) {
+            String temp = input.nextLine();
+            lines.enqueue(temp);
+        }
+        /*
+         * Create the table
+         */
+        processTable(output, lines);
+        /*
+         * Close streams
+         */
+        input.close();
+        output.close();
+        /*
+         * Close input and output streams
+         */
+        in.close();
+        out.close();
+    }
+
+}

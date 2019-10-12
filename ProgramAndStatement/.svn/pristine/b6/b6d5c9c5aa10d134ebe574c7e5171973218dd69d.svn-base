@@ -1,0 +1,32 @@
+PROGRAM First IS
+
+  INSTRUCTION Move IS
+    WHILE next-is-empty DO 
+      move
+    END WHILE
+  END Move  
+ 
+BEGIN
+  WHILE true DO 
+    Move
+    IF next-is-friend THEN
+      turnright
+      IF next-is-wall THEN 
+        turnright
+      ELSE 
+      IF next-is-enemy THEN 
+        infect
+      ELSE 
+        move
+      END IF
+    END IF
+    ELSE 
+      IF next-is-wall THEN 
+        turnright
+      ELSE 
+        infect
+      END IF
+    END IF
+  END WHILE
+END First
+ 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="1122" key="ExportRemoteFolderDialog.location.x"/>
+	<item value="367" key="ExportRemoteFolderDialog.location.y"/>
+	<item value="50" key="UpdateDialogWithConflictHandling.location.y"/>
+	<item value="425" key="RevertDialog.size.y"/>
+	<item value="700" key="RevertDialog.size.x"/>
+	<item value="109" key="HistoryTableProvider.SVNHistoryPage.Revision"/>
+	<item value="542" key="HistoryTableProvider.SVNHistoryPage.Comment"/>
+	<item value="722" key="GenerateDiffFileWizard.size.x"/>
+	<item value="545" key="GenerateDiffFileWizard.size.y"/>
+	<item value="311" key="CommitDialog.location.y"/>
+	<item value="27" key="CommitDialog.location.x"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="610" key="RevertDialog.location.x"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="871" key="UpdateDialogWithConflictHandling.size.y"/>
+	<item value="282" key="RevertDialog.location.y"/>
+	<item value="485" key="CommitDialog.size.y"/>
+	<item value="700" key="UpdateDialogWithConflictHandling.size.x"/>
+	<item value="1339" key="CommitDialog.size.x"/>
+	<item value="272" key="HistoryTableProvider.SVNHistoryPage.Date"/>
+	<item value="217" key="HistoryTableProvider.SVNHistoryPage.Author"/>
+	<item value="1090" key="UpdateDialogWithConflictHandling.location.x"/>
+	<item value="" key="DirectorySelectionPage.lastParent_svn+ssh://stdlinux.cse.ohio-state.edu/project/c2231ad09/repos"/>
+	<item value="636" key="ExportRemoteFolderDialog.size.x"/>
+	<item value="304" key="ExportRemoteFolderDialog.size.y"/>
+	<item value="svn+ssh://stdlinux.cse.ohio-state.edu/project/c2231ad09/repos" key="RepositorySelectionPage.lastRepository"/>
+	<item value="599" key="GenerateDiffFileWizard.location.x"/>
+	<item value="202" key="GenerateDiffFileWizard.location.y"/>
+	<section name="CommitWizard">
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+		<item value="false" key="ShowCompare"/>
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="svn+ssh://stdlinux.cse.ohio-state.edu/project/c2231ad09/repos"/>
+		</list>
+	</section>
+</section>

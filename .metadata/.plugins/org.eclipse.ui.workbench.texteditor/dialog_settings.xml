@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="getFontSize" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="true" key="wholeword"/>
+		<list key="findhistory">
+			<item value="SimpleReadr"/>
+			<item value="getFontSize"/>
+			<item value="wordHTML"/>
+			<item value="outputTopWords"/>
+			<item value="undefined"/>
+			<item value="assertElseFatalError"/>
+			<item value="locals1"/>
+			<item value="myS"/>
+		</list>
+		<list key="replacehistory">
+			<item value="localS"/>
+			<item value="locals2"/>
+			<item value="locals1"/>
+			<item value="diffs2"/>
+			<item value="diffs1"/>
+			<item value="List2aIterator"/>
+			<item value="right"/>
+			<item value="left"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="336" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="454" key="DIALOG_HEIGHT"/>
+		<item value="-78" key="DIALOG_X_ORIGIN"/>
+		<item value="343" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

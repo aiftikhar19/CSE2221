@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>Initial import.</CommitComment>
+	<CommitComment>Initial import. Implemented outputHTMLHeader. </CommitComment>
+	<CommitComment>Implemented outputHTMLHeader</CommitComment>
+	<CommitComment>Implemented nextPrimitiveInstructionAddress()</CommitComment>
+	<CommitComment>Implemented valueOfTerm, valueOfExpr.</CommitComment>
+	<CommitComment>Implemented valueOfDigit, valueOfDigitSeq, valueOfFactor</CommitComment>
+	<CommitComment>Edited</CommitComment>
+	<CommitComment>Initial implementation.</CommitComment>
+	<CommitComment>Added test cases.</CommitComment>
+	<CommitComment>Implemented kernel methods.</CommitComment>
+</CommitComments>

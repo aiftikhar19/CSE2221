@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="components.sequence.Sequence1L"/>
+<fullyQualifiedTypeName name="components.stack.Stack2"/>
+<fullyQualifiedTypeName name="components.queue.Queue2"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="components.queue.Queue1L"/>
+<fullyQualifiedTypeName name="components.stack.Stack"/>
+<fullyQualifiedTypeName name="components.sequence.Sequence"/>
+<fullyQualifiedTypeName name="components.statement.StatementKernel.Condition"/>
+<fullyQualifiedTypeName name="components.statement.Statement"/>
+<fullyQualifiedTypeName name="components.program.Program"/>
+<fullyQualifiedTypeName name="components.naturalnumber.NaturalNumber1L"/>
+<fullyQualifiedTypeName name="components.map.Map.Pair"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="components.map.Map"/>
+<fullyQualifiedTypeName name="components.queue.Queue"/>
+<fullyQualifiedTypeName name="components.set.Set1L"/>
+<fullyQualifiedTypeName name="components.set.Set"/>
+<fullyQualifiedTypeName name="java.util.Map.Entry"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="10" timestamp="1492531446839" analysisTimestamp="1492531446181" release="">
+  <Project projectName="JavaIOExplorations">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\JavaIOExplorations\bin\FilterFileStdJava.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\JavaIOExplorations\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\JavaIOExplorations\test</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\JavaIOExplorations\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="CopyFileStdJava">
+      <SourceLine classname="CopyFileStdJava" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+    </Class>
+    <Method classname="CopyFileStdJava" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="CopyFileStdJava" start="33" end="58" startBytecode="0" endBytecode="381" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader"/>
+    </Method>
+    <SourceLine classname="CopyFileStdJava" start="33" end="33" startBytecode="11" endBytecode="11" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+    <SourceLine classname="CopyFileStdJava" start="33" end="33" startBytecode="11" endBytecode="11" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="CopyFileStdJava">
+      <SourceLine classname="CopyFileStdJava" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+    </Class>
+    <Method classname="CopyFileStdJava" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="CopyFileStdJava" start="33" end="58" startBytecode="0" endBytecode="381" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+    </Method>
+    <Method classname="java.io.FileWriter" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileWriter"/>
+    </Method>
+    <SourceLine classname="CopyFileStdJava" start="35" end="35" startBytecode="33" endBytecode="33" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+    <SourceLine classname="CopyFileStdJava" start="35" end="35" startBytecode="33" endBytecode="33" sourcefile="CopyFileStdJava.java" sourcepath="CopyFileStdJava.java"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="6" last="6" removedByChange="true">
+    <Class classname="FilterFileStdJava">
+      <SourceLine classname="FilterFileStdJava" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Class>
+    <Method classname="FilterFileStdJava" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="FilterFileStdJava" start="30" end="51" startBytecode="0" endBytecode="43" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Method>
+    <LocalVariable name="in" register="2" pc="23" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="FilterFileStdJava" start="34" end="34" startBytecode="22" endBytecode="22" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    <SourceLine classname="FilterFileStdJava" start="34" end="34" startBytecode="22" endBytecode="22" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="in"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="6" last="6" removedByChange="true">
+    <Class classname="FilterFileStdJava">
+      <SourceLine classname="FilterFileStdJava" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Class>
+    <Method classname="FilterFileStdJava" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="FilterFileStdJava" start="30" end="51" startBytecode="0" endBytecode="43" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Method>
+    <LocalVariable name="out" register="3" pc="64" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="FilterFileStdJava" start="43" end="43" startBytecode="63" endBytecode="63" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    <SourceLine classname="FilterFileStdJava" start="43" end="43" startBytecode="63" endBytecode="63" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="out"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="2">
+    <Class classname="FilterFileStdJava">
+      <SourceLine classname="FilterFileStdJava" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Class>
+    <Method classname="FilterFileStdJava" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="FilterFileStdJava" start="33" end="93" startBytecode="0" endBytecode="806" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Method>
+    <Method classname="java.io.FileReader" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileReader"/>
+    </Method>
+    <SourceLine classname="FilterFileStdJava" start="37" end="37" startBytecode="16" endBytecode="16" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    <SourceLine classname="FilterFileStdJava" start="37" end="37" startBytecode="16" endBytecode="16" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="2">
+    <Class classname="FilterFileStdJava">
+      <SourceLine classname="FilterFileStdJava" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Class>
+    <Method classname="FilterFileStdJava" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="FilterFileStdJava" start="33" end="93" startBytecode="0" endBytecode="806" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    </Method>
+    <Method classname="java.io.FileWriter" name="&lt;init&gt;" signature="(Ljava/lang/String;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.FileWriter"/>
+    </Method>
+    <SourceLine classname="FilterFileStdJava" start="47" end="47" startBytecode="54" endBytecode="54" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+    <SourceLine classname="FilterFileStdJava" start="47" end="47" startBytecode="54" endBytecode="54" sourcefile="FilterFileStdJava.java" sourcepath="FilterFileStdJava.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Tue, 18 Apr 2017 12:04:06 -0400" total_classes="1" referenced_classes="24" total_bugs="4" total_size="40" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="2.25" clock_seconds="0.66" peak_mbytes="524.47" alloc_mbytes="1024.00" gc_seconds="0.10" priority_1="4">
+    <PackageStats package="" total_bugs="4" total_types="2" total_size="40" priority_1="4">
+      <ClassStats class="FilterFileStdJava" sourceFile="FilterFileStdJava.java" interface="false" size="40" bugs="2" priority_1="2"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="153" invocations="357" avgMicrosecondsPerInvocation="431" maxMicrosecondsPerInvocation="44203" standardDeviationMircosecondsPerInvocation="2394"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="92" invocations="2" avgMicrosecondsPerInvocation="46403" maxMicrosecondsPerInvocation="81012" standardDeviationMircosecondsPerInvocation="34609"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="51" invocations="24" avgMicrosecondsPerInvocation="2160" maxMicrosecondsPerInvocation="47612" standardDeviationMircosecondsPerInvocation="9479"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="41" invocations="357" avgMicrosecondsPerInvocation="116" maxMicrosecondsPerInvocation="1480" standardDeviationMircosecondsPerInvocation="86"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="31" invocations="24" avgMicrosecondsPerInvocation="1307" maxMicrosecondsPerInvocation="9340" standardDeviationMircosecondsPerInvocation="2186"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.EqualsOperandShouldHaveClassCompatibleWithThis" totalMilliseconds="29" invocations="24" avgMicrosecondsPerInvocation="1231" maxMicrosecondsPerInvocation="26894" standardDeviationMircosecondsPerInvocation="5353"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="24" invocations="46" avgMicrosecondsPerInvocation="527" maxMicrosecondsPerInvocation="18964" standardDeviationMircosecondsPerInvocation="2752"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="20" invocations="24" avgMicrosecondsPerInvocation="873" maxMicrosecondsPerInvocation="6415" standardDeviationMircosecondsPerInvocation="1299"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="18" invocations="71" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="898" standardDeviationMircosecondsPerInvocation="221"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="18" invocations="2" avgMicrosecondsPerInvocation="9381" maxMicrosecondsPerInvocation="18562" standardDeviationMircosecondsPerInvocation="9181"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1492530555097" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1492530555099" release="" codeSize="22" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1492530801827" release="" codeSize="22" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1492531007453" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1492531058239" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1492531079330" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1492531086240" release="" codeSize="18" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1492531116776" release="" codeSize="4" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1492531120591" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1492531143482" release="" codeSize="38" numClasses="1"/>
+  </History>
+</BugCollection>

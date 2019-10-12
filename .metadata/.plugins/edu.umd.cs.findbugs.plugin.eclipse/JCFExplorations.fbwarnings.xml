@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="24" timestamp="1492099904967" analysisTimestamp="1492099904531" release="">
+  <Project projectName="JCFExplorations">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\JCFExplorations\bin\JCFExplorations.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\JCFExplorations\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\JCFExplorations\src</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\JCFExplorations\test</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" rank="18" abbrev="WMI" category="PERFORMANCE" first="12" last="23" removedByChange="true">
+    <Class classname="JCFExplorations">
+      <SourceLine classname="JCFExplorations" sourcefile="JCFExplorations.java" sourcepath="JCFExplorations.java"/>
+    </Class>
+    <Method classname="JCFExplorations" name="giveRaise" signature="(Ljava/util/Map;CI)V" isStatic="true">
+      <SourceLine classname="JCFExplorations" start="85" end="102" startBytecode="0" endBytecode="443" sourcefile="JCFExplorations.java" sourcepath="JCFExplorations.java"/>
+    </Method>
+    <SourceLine classname="JCFExplorations" start="97" end="97" startBytecode="175" endBytecode="175" sourcefile="JCFExplorations.java" sourcepath="JCFExplorations.java"/>
+    <SourceLine classname="JCFExplorations" start="97" end="97" startBytecode="175" endBytecode="175" sourcefile="JCFExplorations.java" sourcepath="JCFExplorations.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Thu, 13 Apr 2017 12:11:44 -0400" total_classes="1" referenced_classes="19" total_bugs="0" total_size="48" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="1.36" clock_seconds="0.44" peak_mbytes="551.14" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="1" total_size="48">
+      <ClassStats class="JCFExplorations" sourceFile="JCFExplorations.java" interface="false" size="48" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="115" invocations="329" avgMicrosecondsPerInvocation="349" maxMicrosecondsPerInvocation="25053" standardDeviationMircosecondsPerInvocation="1471"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="88" invocations="2" avgMicrosecondsPerInvocation="44200" maxMicrosecondsPerInvocation="79112" standardDeviationMircosecondsPerInvocation="34911"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="30" invocations="330" avgMicrosecondsPerInvocation="91" maxMicrosecondsPerInvocation="230" standardDeviationMircosecondsPerInvocation="37"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1492097437160" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1492097437161" release="" codeSize="21" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1492097498065" release="" codeSize="19" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1492097520324" release="" codeSize="33" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1492097569236" release="" codeSize="33" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1492097811375" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1492097937857" release="" codeSize="45" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1492098033155" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1492098036846" release="" codeSize="45" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1492098232760" release="" codeSize="34" numClasses="1"/>
+    <AppVersion sequence="10" timestamp="1492098241244" release="" codeSize="45" numClasses="1"/>
+    <AppVersion sequence="11" timestamp="1492098337500" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="12" timestamp="1492098396482" release="" codeSize="47" numClasses="1"/>
+    <AppVersion sequence="13" timestamp="1492098581744" release="" codeSize="47" numClasses="1"/>
+    <AppVersion sequence="14" timestamp="1492098611378" release="" codeSize="47" numClasses="1"/>
+    <AppVersion sequence="15" timestamp="1492098637233" release="" codeSize="102" numClasses="1"/>
+    <AppVersion sequence="16" timestamp="1492098917963" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="17" timestamp="1492099132074" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="18" timestamp="1492099147110" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="19" timestamp="1492099214251" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="20" timestamp="1492099238503" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="21" timestamp="1492099257444" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="22" timestamp="1492099274165" release="" codeSize="113" numClasses="1"/>
+    <AppVersion sequence="23" timestamp="1492099897958" release="" codeSize="52" numClasses="1"/>
+  </History>
+</BugCollection>

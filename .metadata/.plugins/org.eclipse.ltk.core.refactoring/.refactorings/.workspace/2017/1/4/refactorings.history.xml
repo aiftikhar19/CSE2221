@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;AppendUndoGUI&apos;" deleteContents="true" description="Delete resource &apos;AppendUndoGUI&apos;" element1="/AppendUndoGUI" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1485186110623"/>&#x0A;<refactoring comment="Delete resource &apos;SequenceOnStack&apos;" deleteContents="true" description="Delete resource &apos;SequenceOnStack&apos;" element1="/SequenceOnStack" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1485275843687"/>
+</session>

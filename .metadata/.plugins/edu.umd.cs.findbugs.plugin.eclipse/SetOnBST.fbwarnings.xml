@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="40" timestamp="1487289850147" analysisTimestamp="1487289849675" release="">
+  <Project projectName="SetOnBST">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\SetOnBST\bin\SetTest.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\SetOnBST\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\SetOnBST\test</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\SetOnBST\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="21" last="21" removedByChange="true">
+    <Class classname="Set3a">
+      <SourceLine classname="Set3a" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    </Class>
+    <Method classname="Set3a" name="removeFromTree" signature="(Lcomponents/binarytree/BinaryTree;Ljava/lang/Comparable;)Ljava/lang/Comparable;" isStatic="true">
+      <SourceLine classname="Set3a" start="161" end="190" startBytecode="0" endBytecode="31" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    </Method>
+    <LocalVariable name="left" register="4" pc="71" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Set3a" start="166" end="166" startBytecode="69" endBytecode="69" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    <SourceLine classname="Set3a" start="166" end="166" startBytecode="69" endBytecode="69" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="left"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="21" last="21" removedByChange="true">
+    <Class classname="Set3a">
+      <SourceLine classname="Set3a" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    </Class>
+    <Method classname="Set3a" name="removeFromTree" signature="(Lcomponents/binarytree/BinaryTree;Ljava/lang/Comparable;)Ljava/lang/Comparable;" isStatic="true">
+      <SourceLine classname="Set3a" start="161" end="190" startBytecode="0" endBytecode="31" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    </Method>
+    <LocalVariable name="right" register="3" pc="60" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Set3a" start="165" end="165" startBytecode="59" endBytecode="59" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    <SourceLine classname="Set3a" start="165" end="165" startBytecode="59" endBytecode="59" sourcefile="Set3a.java" sourcepath="Set3a.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="right"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Thu, 16 Feb 2017 19:04:09 -0500" total_classes="1" referenced_classes="15" total_bugs="0" total_size="139" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="1.59" clock_seconds="0.47" peak_mbytes="442.27" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="1" total_size="139">
+      <ClassStats class="SetTest" sourceFile="SetTest.java" interface="false" size="139" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="121" invocations="324" avgMicrosecondsPerInvocation="376" maxMicrosecondsPerInvocation="20158" standardDeviationMircosecondsPerInvocation="1241"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="87" invocations="2" avgMicrosecondsPerInvocation="43591" maxMicrosecondsPerInvocation="77851" standardDeviationMircosecondsPerInvocation="34260"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="33" invocations="324" avgMicrosecondsPerInvocation="104" maxMicrosecondsPerInvocation="274" standardDeviationMircosecondsPerInvocation="44"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="21" invocations="15" avgMicrosecondsPerInvocation="1449" maxMicrosecondsPerInvocation="9896" standardDeviationMircosecondsPerInvocation="2670"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="13" invocations="290" avgMicrosecondsPerInvocation="48" maxMicrosecondsPerInvocation="1672" standardDeviationMircosecondsPerInvocation="116"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="13" invocations="79" avgMicrosecondsPerInvocation="167" maxMicrosecondsPerInvocation="795" standardDeviationMircosecondsPerInvocation="167"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="12" invocations="20" avgMicrosecondsPerInvocation="616" maxMicrosecondsPerInvocation="1129" standardDeviationMircosecondsPerInvocation="244"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="11" invocations="15" avgMicrosecondsPerInvocation="789" maxMicrosecondsPerInvocation="6182" standardDeviationMircosecondsPerInvocation="1494"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1486736247671" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1486736247674" release="" codeSize="21" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1486736327354" release="" codeSize="80" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1486736345780" release="" codeSize="97" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1486736375932" release="" codeSize="104" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1486736396832" release="" codeSize="125" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1486736407785" release="" codeSize="126" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1486736424464" release="" codeSize="127" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1486736486438" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1486736501914" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="10" timestamp="1486736542489" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="11" timestamp="1486736554844" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="12" timestamp="1486736674326" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="13" timestamp="1486736719802" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="14" timestamp="1486736824656" release="" codeSize="109" numClasses="1"/>
+    <AppVersion sequence="15" timestamp="1486736858188" release="" codeSize="128" numClasses="1"/>
+    <AppVersion sequence="16" timestamp="1486736900170" release="" codeSize="122" numClasses="1"/>
+    <AppVersion sequence="17" timestamp="1486736933998" release="" codeSize="122" numClasses="1"/>
+    <AppVersion sequence="18" timestamp="1486736995813" release="" codeSize="114" numClasses="1"/>
+    <AppVersion sequence="19" timestamp="1486737007293" release="" codeSize="124" numClasses="1"/>
+    <AppVersion sequence="20" timestamp="1486737055860" release="" codeSize="124" numClasses="1"/>
+    <AppVersion sequence="21" timestamp="1486737121790" release="" codeSize="106" numClasses="1"/>
+    <AppVersion sequence="22" timestamp="1486737133373" release="" codeSize="101" numClasses="1"/>
+    <AppVersion sequence="23" timestamp="1486737145482" release="" codeSize="101" numClasses="1"/>
+    <AppVersion sequence="24" timestamp="1486737153749" release="" codeSize="119" numClasses="1"/>
+    <AppVersion sequence="25" timestamp="1486737193186" release="" codeSize="118" numClasses="1"/>
+    <AppVersion sequence="26" timestamp="1486737195717" release="" codeSize="119" numClasses="1"/>
+    <AppVersion sequence="27" timestamp="1486737236794" release="" codeSize="119" numClasses="1"/>
+    <AppVersion sequence="28" timestamp="1486737247925" release="" codeSize="7" numClasses="1"/>
+    <AppVersion sequence="29" timestamp="1486737253286" release="" codeSize="21" numClasses="1"/>
+    <AppVersion sequence="30" timestamp="1486737497392" release="" codeSize="185" numClasses="1"/>
+    <AppVersion sequence="31" timestamp="1486737582775" release="" codeSize="185" numClasses="1"/>
+    <AppVersion sequence="32" timestamp="1486737620317" release="" codeSize="185" numClasses="1"/>
+    <AppVersion sequence="33" timestamp="1486737663407" release="" codeSize="185" numClasses="1"/>
+    <AppVersion sequence="34" timestamp="1486737789040" release="" codeSize="185" numClasses="1"/>
+    <AppVersion sequence="35" timestamp="1487289690087" release="" codeSize="255" numClasses="2"/>
+    <AppVersion sequence="36" timestamp="1487289741570" release="" codeSize="138" numClasses="1"/>
+    <AppVersion sequence="37" timestamp="1487289767320" release="" codeSize="138" numClasses="1"/>
+    <AppVersion sequence="38" timestamp="1487289787418" release="" codeSize="138" numClasses="1"/>
+    <AppVersion sequence="39" timestamp="1487289811681" release="" codeSize="139" numClasses="1"/>
+  </History>
+</BugCollection>

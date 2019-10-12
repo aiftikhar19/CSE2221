@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="6" timestamp="1490283775751" analysisTimestamp="1490283775262" release="">
+  <Project projectName="Tokenizer">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\Tokenizer\bin\Tokenizer.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\Tokenizer\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\Tokenizer\test</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\Tokenizer\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="5" last="5" removedByChange="true">
+    <Class classname="Tokenizer">
+      <SourceLine classname="Tokenizer" sourcefile="Tokenizer.java" sourcepath="Tokenizer.java"/>
+    </Class>
+    <Method classname="Tokenizer" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="Tokenizer" start="171" end="221" startBytecode="0" endBytecode="125" sourcefile="Tokenizer.java" sourcepath="Tokenizer.java"/>
+    </Method>
+    <LocalVariable name="q1" register="5" pc="48" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="Tokenizer" start="182" end="182" startBytecode="46" endBytecode="46" sourcefile="Tokenizer.java" sourcepath="Tokenizer.java"/>
+    <SourceLine classname="Tokenizer" start="182" end="182" startBytecode="46" endBytecode="46" sourcefile="Tokenizer.java" sourcepath="Tokenizer.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="q1"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Thu, 23 Mar 2017 11:42:55 -0400" total_classes="1" referenced_classes="22" total_bugs="0" total_size="84" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="1.67" clock_seconds="0.49" peak_mbytes="458.47" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="1" total_size="84">
+      <ClassStats class="Tokenizer" sourceFile="Tokenizer.java" interface="false" size="84" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="99" invocations="344" avgMicrosecondsPerInvocation="288" maxMicrosecondsPerInvocation="5035" standardDeviationMircosecondsPerInvocation="557"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="97" invocations="2" avgMicrosecondsPerInvocation="48778" maxMicrosecondsPerInvocation="81653" standardDeviationMircosecondsPerInvocation="32875"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="42" invocations="22" avgMicrosecondsPerInvocation="1914" maxMicrosecondsPerInvocation="21417" standardDeviationMircosecondsPerInvocation="4531"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="35" invocations="344" avgMicrosecondsPerInvocation="102" maxMicrosecondsPerInvocation="435" standardDeviationMircosecondsPerInvocation="44"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="18" invocations="74" avgMicrosecondsPerInvocation="249" maxMicrosecondsPerInvocation="1137" standardDeviationMircosecondsPerInvocation="214"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="14" invocations="22" avgMicrosecondsPerInvocation="674" maxMicrosecondsPerInvocation="5633" standardDeviationMircosecondsPerInvocation="1152"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="14" invocations="9" avgMicrosecondsPerInvocation="1648" maxMicrosecondsPerInvocation="6215" standardDeviationMircosecondsPerInvocation="1744"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="12" invocations="310" avgMicrosecondsPerInvocation="40" maxMicrosecondsPerInvocation="614" standardDeviationMircosecondsPerInvocation="61"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="12" invocations="9" avgMicrosecondsPerInvocation="1371" maxMicrosecondsPerInvocation="2777" standardDeviationMircosecondsPerInvocation="992"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1490283450405" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1490283450408" release="" codeSize="59" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1490283518292" release="" codeSize="56" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1490283527100" release="" codeSize="69" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1490283543617" release="" codeSize="84" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1490283773538" release="" codeSize="67" numClasses="1"/>
+  </History>
+</BugCollection>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1472328511878" analysisTimestamp="1472328510073" release="">
+  <Project projectName="ProjectTemplate">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\ProjectTemplate\bin</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\ProjectTemplate\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\ProjectTemplate\test</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\ProjectTemplate\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Sat, 27 Aug 2016 16:08:29 -0400" total_classes="4" referenced_classes="17" total_bugs="0" total_size="38" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="5.08" clock_seconds="1.81" peak_mbytes="405.55" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="4" total_size="38">
+      <ClassStats class="HelloWorld" sourceFile="HelloWorld.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="ProgramSkeleton" sourceFile="ProgramSkeleton.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="ProgramWithIO" sourceFile="ProgramWithIO.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="ProgramWithIOAndStaticMethod" sourceFile="ProgramWithIOAndStaticMethod.java" interface="false" size="13" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="640" invocations="2" avgMicrosecondsPerInvocation="320034" maxMicrosecondsPerInvocation="476948" standardDeviationMircosecondsPerInvocation="156914"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="275" invocations="318" avgMicrosecondsPerInvocation="865" maxMicrosecondsPerInvocation="35870" standardDeviationMircosecondsPerInvocation="2998"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="91" invocations="66" avgMicrosecondsPerInvocation="1388" maxMicrosecondsPerInvocation="13386" standardDeviationMircosecondsPerInvocation="2557"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="81" invocations="17" avgMicrosecondsPerInvocation="4810" maxMicrosecondsPerInvocation="30080" standardDeviationMircosecondsPerInvocation="7977"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="68" invocations="318" avgMicrosecondsPerInvocation="213" maxMicrosecondsPerInvocation="10898" standardDeviationMircosecondsPerInvocation="677"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="65" invocations="17" avgMicrosecondsPerInvocation="3825" maxMicrosecondsPerInvocation="29489" standardDeviationMircosecondsPerInvocation="7690"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="50" invocations="38" avgMicrosecondsPerInvocation="1335" maxMicrosecondsPerInvocation="20922" standardDeviationMircosecondsPerInvocation="4147"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="43" invocations="9" avgMicrosecondsPerInvocation="4862" maxMicrosecondsPerInvocation="42168" standardDeviationMircosecondsPerInvocation="13190"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1472328511875" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

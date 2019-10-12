@@ -1,0 +1,454 @@
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+import components.map.Map;
+
+/**
+ * JUnit test fixture for {@code Map<String, String>}'s constructor and kernel
+ * methods.
+ *
+ * @author Aisha Iftikhar, Cerys Hughes
+ *
+ */
+public abstract class MapTest {
+
+    /**
+     * Invokes the appropriate {@code Map} constructor for the implementation
+     * under test and returns the result.
+     *
+     * @return the new map
+     * @ensures constructorTest = {}
+     */
+    protected abstract Map<String, String> constructorTest();
+
+    /**
+     * Invokes the appropriate {@code Map} constructor for the reference
+     * implementation and returns the result.
+     *
+     * @return the new map
+     * @ensures constructorRef = {}
+     */
+    protected abstract Map<String, String> constructorRef();
+
+    /**
+     *
+     * Creates and returns a {@code Map<String, String>} of the implementation
+     * under test type with the given entries.
+     *
+     * @param args
+     *            the (key, value) pairs for the map
+     * @return the constructed map
+     * @requires <pre>
+     * [args.length is even]  and
+     * [the 'key' entries in args are unique]
+     * </pre>
+     * @ensures createFromArgsTest = [pairs in args]
+     */
+    private Map<String, String> createFromArgsTest(String... args) {
+        assert args.length % 2 == 0 : "Violation of: args.length is even";
+        Map<String, String> map = this.constructorTest();
+        for (int i = 0; i < args.length; i += 2) {
+            assert !map.hasKey(args[i]) : ""
+                    + "Violation of: the 'key' entries in args are unique";
+            map.add(args[i], args[i + 1]);
+        }
+        return map;
+    }
+
+    /**
+     *
+     * Creates and returns a {@code Map<String, String>} of the reference
+     * implementation type with the given entries.
+     *
+     * @param args
+     *            the (key, value) pairs for the map
+     * @return the constructed map
+     * @requires <pre>
+     * [args.length is even]  and
+     * [the 'key' entries in args are unique]
+     * </pre>
+     * @ensures createFromArgsRef = [pairs in args]
+     */
+    private Map<String, String> createFromArgsRef(String... args) {
+        assert args.length % 2 == 0 : "Violation of: args.length is even";
+        Map<String, String> map = this.constructorRef();
+        for (int i = 0; i < args.length; i += 2) {
+            assert !map.hasKey(args[i]) : ""
+                    + "Violation of: the 'key' entries in args are unique";
+            map.add(args[i], args[i + 1]);
+        }
+        return map;
+    }
+
+    /*
+     * Tests default constructor; boundary case, only possible case
+     */
+    @Test
+    public final void testDefaultConstructor() {
+        /*
+         * Set up variables and call method under test
+         */
+        Map<String, String> test = this.constructorTest();
+        Map<String, String> ref = this.constructorRef();
+        /*
+         * Assert variable values meet expectations
+         */
+        assertEquals(ref, test);
+    }
+
+    /*
+     * Tests add; boundary case, adding to empty Map<String,String>
+     */
+    @Test
+    public final void testAddToEmpty() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.constructorTest();
+        Map<String, String> ref = this.constructorRef();
+        /*
+         * Call method under test
+         */
+        test.add("key", "value");
+        ref.add("key", "value");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+
+    }
+
+    /*
+     * Tests add; routine case, adding to nonempty Map<String,String>
+     */
+    @Test
+    public final void testAddToNonEmpty() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key1", "value",
+                "parasaurolophus", "dinosaur");
+        Map<String, String> ref = this.createFromArgsRef("key1", "value",
+                "parasaurolophus", "dinosaur");
+        /*
+         * Call method under test
+         */
+        test.add("key2", "value");
+        ref.add("key2", "value");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+
+    }
+
+    /*
+     * Tests remove; boundary case, smallest possible Map size(1)
+     */
+    @Test
+    public final void testRemoveToEmpty() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value");
+        Map<String, String> ref = this.createFromArgsRef("key", "value");
+        /*
+         * Call method under test
+         */
+        Map.Pair<String, String> testRemoved = test.remove("key");
+        ref.remove("key");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals("key", testRemoved.key());
+        assertEquals("value", testRemoved.value());
+
+    }
+
+    /*
+     * Tests remove; routine case, Map size >1
+     */
+    @Test
+    public final void testRemoveToNonEmpty() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree");
+        Map<String, String> ref = this.createFromArgsRef("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree");
+        /*
+         * Call method under test
+         */
+        Map.Pair<String, String> testRemoved = test.remove("key");
+        ref.remove("key");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals("key", testRemoved.key());
+        assertEquals("value", testRemoved.value());
+
+    }
+
+    /*
+     * Tests removeAny; boundary case, Map size =1
+     */
+    @Test
+    public final void testRemoveAnyToEmpty() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value");
+        Map<String, String> ref = this.createFromArgsRef("key", "value");
+        /*
+         * Call method under test
+         */
+        Map.Pair<String, String> testRemoved = test.removeAny();
+        Map.Pair<String, String> refRemoved = ref.remove(testRemoved.key());
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(refRemoved.key(), testRemoved.key());
+        assertEquals(refRemoved.value(), testRemoved.value());
+
+    }
+
+    /*
+     * Tests removeAny; routine case, Map size >1
+     */
+    @Test
+    public final void testRemoveAnyToNonEmpty() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree");
+        Map<String, String> ref = this.createFromArgsRef("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree");
+        /*
+         * Call method under test
+         */
+        Map.Pair<String, String> testRemoved = test.removeAny();
+        Map.Pair<String, String> refRemoved = ref.remove(testRemoved.key());
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(refRemoved.key(), testRemoved.key());
+        assertEquals(refRemoved.value(), testRemoved.value());
+
+    }
+
+    /*
+     * Tests value; boundary case, Map size =1
+     */
+    @Test
+    public final void testValueSizeOne() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value");
+        Map<String, String> ref = this.createFromArgsRef("key", "value");
+        /*
+         * Call method under test
+         */
+        String testValue = test.value("key");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals("value", testValue);
+
+    }
+
+    /*
+     * Tests value; routine case, Map size >1
+     */
+    @Test
+    public final void testValueSizeMoreThanOne() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree", "siltloam", "soil");
+        Map<String, String> ref = this.createFromArgsRef("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree", "siltloam", "soil");
+        /*
+         * Call method under test
+         */
+        String testValue = test.value("key");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals("value", testValue);
+
+    }
+
+    /*
+     * Tests hasKey; routine case, Map size >1 (true)
+     */
+    @Test
+    public final void testHasKeyMoreThanOneTrue() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree", "siltloam", "soil");
+        Map<String, String> ref = this.createFromArgsRef("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree", "siltloam", "soil");
+        /*
+         * Call method under test
+         */
+        boolean testHasKey = test.hasKey("key");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(true, testHasKey);
+
+    }
+
+    /*
+     * Tests hasKey; routine case, Map size >1 (false)
+     */
+    @Test
+    public final void testHasKeyMoreThanOneFalse() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree", "siltloam", "soil");
+        Map<String, String> ref = this.createFromArgsRef("key", "value",
+                "velociraptor", "dinosaur", "oak", "tree", "siltloam", "soil");
+        /*
+         * Call method under test
+         */
+        boolean testHasKey = test.hasKey("key1");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(false, testHasKey);
+
+    }
+
+    /*
+     * Tests hasKey; boundary case, Map size =1 (true)
+     */
+    @Test
+    public final void testHasKeyOneTrue() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value");
+        Map<String, String> ref = this.createFromArgsRef("key", "value");
+        /*
+         * Call method under test
+         */
+        boolean testHasKey = test.hasKey("key");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(true, testHasKey);
+
+    }
+
+    /*
+     * Tests hasKey; boundary case, Map size =1 (false)
+     */
+    @Test
+    public final void testHasKeyOneFalse() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value");
+        Map<String, String> ref = this.createFromArgsRef("key", "value");
+        /*
+         * Call method under test
+         */
+        boolean testHasKey = test.hasKey("key1");
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(false, testHasKey);
+
+    }
+
+    /*
+     * Tests size; boundary case, Map size =0
+     */
+    @Test
+    public final void testSizeZero() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest();
+        Map<String, String> ref = this.createFromArgsRef();
+        /*
+         * Call method under test
+         */
+        int testSize = test.size();
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(0, testSize);
+
+    }
+
+    /*
+     * Tests size; routine case, Map size =1
+     */
+    @Test
+    public final void testSizeOne() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value");
+        Map<String, String> ref = this.createFromArgsRef("key", "value");
+        /*
+         * Call method under test
+         */
+        int testSize = test.size();
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(1, testSize);
+
+    }
+
+    /*
+     * Tests size; routine case, Map size >1
+     */
+    @Test
+    public final void testSizeMultiple() {
+        /*
+         * Set up variables
+         */
+        Map<String, String> test = this.createFromArgsTest("key", "value",
+                "Miami silt loam", "fair drainage", "Townshend silty clay loam",
+                "poor drainage");
+        Map<String, String> ref = this.createFromArgsRef("key", "value",
+                "Miami silt loam", "fair drainage", "Townshend silty clay loam",
+                "poor drainage");
+        /*
+         * Call method under test
+         */
+        int testSize = test.size();
+        /*
+         * Assert variable values match expectations
+         */
+        assertEquals(ref, test);
+        assertEquals(3, testSize);
+
+    }
+
+}

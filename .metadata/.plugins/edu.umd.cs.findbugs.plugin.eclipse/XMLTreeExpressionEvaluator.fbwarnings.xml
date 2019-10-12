@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="84" timestamp="1477510951536" analysisTimestamp="1477510951190" release="">
+  <Project projectName="XMLTreeExpressionEvaluator">
+    <Jar>C:\Users\iftik\Desktop\CSE 2221\workspace\XMLTreeExpressionEvaluator\bin\XMLTreeNNExpressionEvaluator.class</Jar>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\workspace\XMLTreeExpressionEvaluator\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\components.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.junit_4.12.0.v201504281640\junit.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\iftik\Desktop\CSE 2221\eclipse\plugins\org.hamcrest.core_1.3.0.v201303031735.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jre1.8.0_102\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\XMLTreeExpressionEvaluator\src</SrcDir>
+    <SrcDir>C:\Users\iftik\Desktop\CSE 2221\workspace\XMLTreeExpressionEvaluator\test</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="50" last="50" removedByChange="true">
+    <Class classname="XMLTreeNNExpressionEvaluator">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Class>
+    <Method classname="XMLTreeNNExpressionEvaluator" name="evaluate" signature="(Lcomponents/xmltree/XMLTree;)Lcomponents/naturalnumber/NaturalNumber;" isStatic="true">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" start="38" end="76" startBytecode="0" endBytecode="95" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Method>
+    <LocalVariable name="child0" register="4" pc="93" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="53" end="53" startBytecode="91" endBytecode="91" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="53" end="53" startBytecode="91" endBytecode="91" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="child0"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="53" last="53" removedByChange="true">
+    <Class classname="XMLTreeNNExpressionEvaluator">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Class>
+    <Method classname="XMLTreeNNExpressionEvaluator" name="evaluate" signature="(Lcomponents/xmltree/XMLTree;)Lcomponents/naturalnumber/NaturalNumber;" isStatic="true">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" start="38" end="78" startBytecode="0" endBytecode="100" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Method>
+    <LocalVariable name="child1" register="6" pc="120" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="56" end="56" startBytecode="118" endBytecode="118" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="56" end="56" startBytecode="118" endBytecode="118" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="child1"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="51" last="51" removedByChange="true">
+    <Class classname="XMLTreeNNExpressionEvaluator">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Class>
+    <Method classname="XMLTreeNNExpressionEvaluator" name="evaluate" signature="(Lcomponents/xmltree/XMLTree;)Lcomponents/naturalnumber/NaturalNumber;" isStatic="true">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" start="38" end="76" startBytecode="0" endBytecode="92" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Method>
+    <LocalVariable name="first" register="3" pc="76" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="51" end="51" startBytecode="75" endBytecode="75" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="51" end="51" startBytecode="75" endBytecode="75" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="first"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="80" last="80" removedByChange="true">
+    <Class classname="XMLTreeNNExpressionEvaluator">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Class>
+    <Method classname="XMLTreeNNExpressionEvaluator" name="evaluate" signature="(Lcomponents/xmltree/XMLTree;)Lcomponents/naturalnumber/NaturalNumber;" isStatic="true">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" start="38" end="84" startBytecode="0" endBytecode="115" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Method>
+    <LocalVariable name="operation" register="5" pc="147" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="62" end="62" startBytecode="145" endBytecode="145" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="62" end="62" startBytecode="145" endBytecode="145" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.BASE_VALUE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="operation"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.NO_LOADS" value="true"/>
+  </BugInstance>
+  <BugInstance type="SA_LOCAL_SELF_ASSIGNMENT" priority="2" rank="17" abbrev="SA" category="STYLE" first="51" last="51" removedByChange="true">
+    <Class classname="XMLTreeNNExpressionEvaluator">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Class>
+    <Method classname="XMLTreeNNExpressionEvaluator" name="evaluate" signature="(Lcomponents/xmltree/XMLTree;)Lcomponents/naturalnumber/NaturalNumber;" isStatic="true">
+      <SourceLine classname="XMLTreeNNExpressionEvaluator" start="38" end="76" startBytecode="0" endBytecode="473" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+    </Method>
+    <LocalVariable name="child0" register="4" pc="89" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="XMLTreeNNExpressionEvaluator" start="53" end="53" startBytecode="89" endBytecode="89" sourcefile="XMLTreeNNExpressionEvaluator.java" sourcepath="XMLTreeNNExpressionEvaluator.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 26 Oct 2016 15:42:31 -0400" total_classes="1" referenced_classes="20" total_bugs="0" total_size="50" num_packages="1" java_version="1.8.0_102" vm_version="25.102-b14" cpu_seconds="0.97" clock_seconds="0.35" peak_mbytes="545.76" alloc_mbytes="1024.00" gc_seconds="0.02">
+    <PackageStats package="" total_bugs="0" total_types="1" total_size="50">
+      <ClassStats class="XMLTreeNNExpressionEvaluator" sourceFile="XMLTreeNNExpressionEvaluator.java" interface="false" size="50" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="120" invocations="2" avgMicrosecondsPerInvocation="60316" maxMicrosecondsPerInvocation="115185" standardDeviationMircosecondsPerInvocation="54869"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="100" invocations="363" avgMicrosecondsPerInvocation="278" maxMicrosecondsPerInvocation="17240" standardDeviationMircosecondsPerInvocation="1024"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="24" invocations="363" avgMicrosecondsPerInvocation="67" maxMicrosecondsPerInvocation="193" standardDeviationMircosecondsPerInvocation="31"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1476889189384" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1476889189384" release="" codeSize="23" numClasses="1"/>
+    <AppVersion sequence="2" timestamp="1477236335697" release="" codeSize="23" numClasses="1"/>
+    <AppVersion sequence="3" timestamp="1477236359658" release="" codeSize="7" numClasses="1"/>
+    <AppVersion sequence="4" timestamp="1477236364655" release="" codeSize="8" numClasses="1"/>
+    <AppVersion sequence="5" timestamp="1477236449874" release="" codeSize="8" numClasses="1"/>
+    <AppVersion sequence="6" timestamp="1477236968942" release="" codeSize="22" numClasses="1"/>
+    <AppVersion sequence="7" timestamp="1477237002988" release="" codeSize="22" numClasses="1"/>
+    <AppVersion sequence="8" timestamp="1477237005613" release="" codeSize="22" numClasses="1"/>
+    <AppVersion sequence="9" timestamp="1477237411200" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="10" timestamp="1477237443773" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="11" timestamp="1477238164433" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="12" timestamp="1477238495356" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="13" timestamp="1477238522294" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="14" timestamp="1477238560246" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="15" timestamp="1477239124453" release="" codeSize="23" numClasses="1"/>
+    <AppVersion sequence="16" timestamp="1477239141277" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="17" timestamp="1477239150983" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="18" timestamp="1477239211117" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="19" timestamp="1477239233194" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="20" timestamp="1477239403621" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="21" timestamp="1477239416983" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="22" timestamp="1477492938033" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="23" timestamp="1477492955411" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="24" timestamp="1477493021018" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="25" timestamp="1477493831854" release="" codeSize="26" numClasses="1"/>
+    <AppVersion sequence="26" timestamp="1477493838741" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="27" timestamp="1477493856394" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="28" timestamp="1477493871384" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="29" timestamp="1477493878785" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="30" timestamp="1477493881850" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="31" timestamp="1477494029083" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="32" timestamp="1477494203080" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="33" timestamp="1477494375105" release="" codeSize="26" numClasses="1"/>
+    <AppVersion sequence="34" timestamp="1477494380388" release="" codeSize="38" numClasses="1"/>
+    <AppVersion sequence="35" timestamp="1477495124582" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="36" timestamp="1477495136466" release="" codeSize="39" numClasses="1"/>
+    <AppVersion sequence="37" timestamp="1477495158775" release="" codeSize="19" numClasses="1"/>
+    <AppVersion sequence="38" timestamp="1477495274154" release="" codeSize="40" numClasses="1"/>
+    <AppVersion sequence="39" timestamp="1477495284481" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="40" timestamp="1477495287808" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="41" timestamp="1477495293637" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="42" timestamp="1477495749631" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="43" timestamp="1477495754899" release="" codeSize="6" numClasses="1"/>
+    <AppVersion sequence="44" timestamp="1477495779918" release="" codeSize="41" numClasses="1"/>
+    <AppVersion sequence="45" timestamp="1477495781993" release="" codeSize="41" numClasses="1"/>
+    <AppVersion sequence="46" timestamp="1477495849872" release="" codeSize="42" numClasses="1"/>
+    <AppVersion sequence="47" timestamp="1477495871957" release="" codeSize="42" numClasses="1"/>
+    <AppVersion sequence="48" timestamp="1477495896802" release="" codeSize="43" numClasses="1"/>
+    <AppVersion sequence="49" timestamp="1477496014720" release="" codeSize="44" numClasses="1"/>
+    <AppVersion sequence="50" timestamp="1477496229437" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="51" timestamp="1477496252002" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="52" timestamp="1477496269272" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="53" timestamp="1477496290328" release="" codeSize="48" numClasses="1"/>
+    <AppVersion sequence="54" timestamp="1477496317813" release="" codeSize="48" numClasses="1"/>
+    <AppVersion sequence="55" timestamp="1477496388042" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="56" timestamp="1477496601362" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="57" timestamp="1477496788557" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="58" timestamp="1477497033777" release="" codeSize="47" numClasses="1"/>
+    <AppVersion sequence="59" timestamp="1477509880991" release="" codeSize="37" numClasses="1"/>
+    <AppVersion sequence="60" timestamp="1477509930741" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="61" timestamp="1477509939793" release="" codeSize="46" numClasses="1"/>
+    <AppVersion sequence="62" timestamp="1477509961812" release="" codeSize="48" numClasses="1"/>
+    <AppVersion sequence="63" timestamp="1477510092645" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="64" timestamp="1477510133528" release="" codeSize="19" numClasses="1"/>
+    <AppVersion sequence="65" timestamp="1477510136454" release="" codeSize="48" numClasses="1"/>
+    <AppVersion sequence="66" timestamp="1477510168118" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="67" timestamp="1477510217602" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="68" timestamp="1477510230579" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="69" timestamp="1477510436440" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="70" timestamp="1477510447756" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="71" timestamp="1477510490557" release="" codeSize="53" numClasses="1"/>
+    <AppVersion sequence="72" timestamp="1477510503181" release="" codeSize="19" numClasses="1"/>
+    <AppVersion sequence="73" timestamp="1477510524775" release="" codeSize="52" numClasses="1"/>
+    <AppVersion sequence="74" timestamp="1477510583567" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="75" timestamp="1477510644392" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="76" timestamp="1477510679616" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="77" timestamp="1477510712808" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="78" timestamp="1477510728902" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="79" timestamp="1477510736416" release="" codeSize="49" numClasses="1"/>
+    <AppVersion sequence="80" timestamp="1477510795618" release="" codeSize="50" numClasses="1"/>
+    <AppVersion sequence="81" timestamp="1477510826610" release="" codeSize="50" numClasses="1"/>
+    <AppVersion sequence="82" timestamp="1477510879191" release="" codeSize="50" numClasses="1"/>
+    <AppVersion sequence="83" timestamp="1477510910161" release="" codeSize="50" numClasses="1"/>
+  </History>
+</BugCollection>
